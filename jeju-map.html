@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>제주 관광지 지도</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      .place-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+      .place-list button {
+        padding: 6px 10px;
+        border-radius: 6px;
+        border: 1px solid #ddd;
+        cursor: pointer;
+        background: #f9f9f9;
+      }
+      .place-list button:hover {
+        background: #eee;
+      }
+      #map-frame {
+        width: 100%;
+        max-width: 800px;
+        height: 450px;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>제주 관광지 지도 보기</h1>
+
+    <!-- 1. 장소 버튼들 -->
+     <div class="place-list">
+      <button onclick="showPlace('hallasan')">한라산 국립공원</button>
+      <button onclick="showPlace('seongsan')">성산일출봉</button>
+      <button onclick="showPlace('hyeopjae')">협재해수욕장</button>
+      <button onclick="showPlace('hamdeok')">함덕해수욕장</button>
+      <button onclick="showPlace('jungmun')">중문색달해변</button>
+      <button onclick="showPlace('jeongbang')">정방폭포</button>
+      <button onclick="showPlace('manjanggul')">만장굴</button>
+      <button onclick="showPlace('seopjikoji')">섭지코지</button>
+      <button onclick="showPlace('ecoLand')">에코랜드</button>
+     </div>
+
+     <!-- 2. 구글 지도 iframe (API 키 x, 그냥 웹페이지를 embed) -->
+      <iframe
+      id="map-frame"
+      src="https://www.google.com/maps?q=제주도&z=10&output=embed"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+
+       <script>
+        const PLACES = {
+          hallasan: "한라산 국립공원",
+          seongsan: "성산일출봉",
+          hyeopjae: "협재해수욕장",
+          hamdeok: "함덕해수욕장",
+          jungmun: "중문색달해변",
+          cheonjeyeon: "천지연폭포",
+          jeongbang: "정방폭포",
+          manjanggul: "만장굴",
+          seopjikoji: "섭지코지",
+          ecoLand: "에코랜드 테마파크"
+        };
+
+        function showPlace(key) {
+          const query = PLACES[key];
+          if (!query) return;
+
+          const url =
+          "https://www.google.com/maps?q=" +
+          encodeURIComponent(query) +
+          "&z=14&output=embed";
+
+          const iframe = document.getElementById("map-frame");
+          iframe.src = url;
+        }
+       </script>
+  </body>
+</html>
