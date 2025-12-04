@@ -1,4 +1,4 @@
-# nolmung-shwimung
+# 놀멍쉬멍 nolmung-shwimung
 > 제주대학교 캡스톤디자인2 – 키워드 기반 제주 여행 추천 웹 서비스
 
 ---
