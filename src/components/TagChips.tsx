@@ -1,21 +1,35 @@
+// src/components/TagChips.tsx
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { TAGS } from "../data/tags";
+import { TAGS, STAY_TAGS, FOOD_TAGS } from "../data/tags";
 
-export default function TagChips({ compact = false }: { compact?: boolean }) {
+interface TagChipsProps {
+  compact?: boolean;
+  category?: string;
+}
+
+export default function TagChips({
+  compact = false,
+  category = "all",
+}: TagChipsProps) {
   const navigate = useNavigate();
   const [sp] = useSearchParams();
 
-  // 🔹 이제 "현재 선택된 태그 1개"만 관리
   const activeKey = sp.get("tags") || "";
+
+  // 🔥 카테고리별 태그 선택
+  const tagList =
+    category === "stay"
+      ? STAY_TAGS
+      : category === "food"
+      ? FOOD_TAGS
+      : TAGS;
 
   const toggle = (key: string) => {
     const params = new URLSearchParams(sp);
 
     if (activeKey === key) {
-      // 이미 선택된 태그면 → 선택 해제
       params.delete("tags");
     } else {
-      // 다른 태그를 누르면 → 그 태그만 선택
       params.set("tags", key);
     }
 
@@ -25,15 +39,16 @@ export default function TagChips({ compact = false }: { compact?: boolean }) {
 
   return (
     <div className={`flex flex-wrap gap-2 ${compact ? "" : "mt-4"}`}>
-      {TAGS.map(({ key, icon }) => {
+      {tagList.map(({ key, icon }) => {
         const on = activeKey === key;
+
         return (
           <button
             key={key}
             onClick={() => toggle(key)}
             className={`px-3 py-1.5 rounded-xl border text-sm flex items-center gap-1
-              ${on ? "bg-black text-white border-black" : "bg-white text-gray-800"} 
-              hover:shadow-sm`}
+            ${on ? "bg-black text-white border-black" : "bg-white text-gray-800"} 
+            hover:shadow-sm`}
           >
             <span>{icon}</span>
             <span>{key}</span>
