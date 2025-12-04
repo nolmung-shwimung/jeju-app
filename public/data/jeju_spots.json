@@ -1,0 +1,1604 @@
+[
+  {
+    "id": "seongsan-ilchulbong",
+    "name": "성산일출봉",
+    "category": "attraction",
+    "address": "제주특별자치도 서귀포시 성산읍 성산리 1",
+    "tags": [
+      "자연",
+      "가족여행",
+      "사진",
+      "친구들",
+      "혼자"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "제주의 대표적인 일출 명소",
+    "openingHours": "07:00 - 20:00",
+    "phone": "064-783-0959",
+    "priceInfo": "성인 5,000원"
+  },
+  {
+    "id": "saebyeol-oreum",
+    "name": "새별오름",
+    "category": "attraction",
+    "address": "제주 제주시 애월읍 봉성리 산59-8",
+    "tags": [
+      "자연",
+      "사진",
+      "친구들",
+      "혼자",
+      "가족여행"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "제주특별자치도 제주시 애월읍 봉성리에 위치한 측화산이다",
+    "openingHours": "정보없음",
+    "phone": "정보없음",
+    "priceInfo": "무료"
+  },
+  {
+    "id": "saryeoni-forest-path",
+    "name": "사려니숲길",
+    "category": "attraction",
+    "address": "제주 제주시 조천읍 교래리 산137-1",
+    "tags": [
+      "자연",
+      "휴식",
+      "혼자",
+      "사진",
+      "가족여행"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "한라산둘레길7구간",
+    "openingHours": "정보없음",
+    "phone": "064-900-8800",
+    "priceInfo": "무료"
+  },
+  {
+    "id": "samyang-beach",
+    "name": "삼양해수욕장",
+    "category": "attraction",
+    "address": "제주 제주시 삼양동",
+    "tags": [
+      "자연",
+      "휴식",
+      "친구들",
+      "가족여행",
+      "사진",
+      "반려동물 동반"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "검은 모래가 펼쳐진 제주만의 독특한 분위기를 가진 해수욕장입니다.",
+    "openingHours": "정보없음",
+    "phone": "064-728-3991",
+    "priceInfo": "무료"
+  },
+  {
+    "id": "sanbangsan",
+    "name": "산방산",
+    "category": "attraction",
+    "address": "제주 서귀포시 안덕면",
+    "tags": [
+      "자연",
+      "사진",
+      "가족여행",
+      "문화"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "산방산은 제주 서남부 지역의 평탄한 지형 위에 우뚝 솟은 타원형의 돔형(dome) 화산으로 한라산, 성산일출봉과 함께 제주의 3대 산으로 불린다.",
+    "openingHours": "09:00-18:00",
+    "phone": "064-794-2940",
+    "priceInfo": "무료"
+  },
+  {
+    "id": "dodudong-rainbow-road",
+    "name": "도두동 무지개 해안도로",
+    "category": "attraction",
+    "address": "제주 제주시 도두일동 1734",
+    "tags": [
+      "자연",
+      "사진",
+      "친구들"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "형형색색의 방파제와 바다 전망이 어우러진 인기 드라이브·포토 스폿입니다.",
+    "openingHours": "정보없음",
+    "phone": "정보없음",
+    "priceInfo": "무료"
+  },
+  {
+    "id": "donneko",
+    "name": "돈내코",
+    "category": "attraction",
+    "address": "제주 서귀포시 돈내코로 128-1",
+    "tags": [
+      "자연",
+      "휴식",
+      "가족여행"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "푸른 천연 계곡과 울창한 숲이 어우러진 한여름 피서지로 유명한 자연 휴식 공간입니다.",
+    "openingHours": "정보없음",
+    "phone": "정보없음",
+    "priceInfo": "무료"
+  },
+  {
+    "id": "gimnyeong-beach",
+    "name": "김녕해수욕장",
+    "category": "attraction",
+    "address": "제주 제주시 구좌읍 김녕리",
+    "tags": [
+      "자연",
+      "사진",
+      "휴식",
+      "가족여행",
+      "반려동물 동반"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "에메랄드빛 바다와 고운 백사장이 아름다운 제주 동부 대표 해수욕장입니다.",
+    "openingHours": "정보없음",
+    "phone": "064-728-3988",
+    "priceInfo": "무료"
+  },
+  {
+    "id": "geum-oreum",
+    "name": "금오름",
+    "category": "attraction",
+    "address": "제주 제주시 한림읍 금악리 산1-1",
+    "tags": [
+      "자연",
+      "사진",
+      "혼자",
+      "친구들"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "서부 중산간 지역의 대표적인 오름 중의 하나이다. ",
+    "openingHours": "정보없음",
+    "phone": "정보없음",
+    "priceInfo": "정보없음"
+  },
+  {
+    "id": "geumneung-beach",
+    "name": "금능해수욕장",
+    "category": "attraction",
+    "address": "제주 제주시 한림읍 금능리",
+    "tags": [
+      "자연",
+      "사진",
+      "가족여행",
+      "친구들"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "파란 물감을 풀어놓은 것 같은 바다부터 생김새가 귀여운 비양도, 촉감이 보슬거리는 모래사장까지 이웃한 해변과 비슷한 풍경을 품고 있지만 그보다 사람이 붐비지 않아 여유로운 것이 매력이다.",
+    "openingHours": "정보없음",
+    "phone": "064-728-3983",
+    "priceInfo": "무료"
+  },
+  {
+    "id": "gyorae-forest-park",
+    "name": "교래자연휴양림",
+    "category": "attraction",
+    "address": "제주 제주시 조천읍 남조로 2023 교래자연휴양림",
+    "tags": [
+      "자연",
+      "휴식",
+      "가족여행"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "제주의 곶자왈 지역에 조성된 자연휴양림",
+    "openingHours": "정보없음",
+    "phone": "064-710-7475",
+    "priceInfo": "성인 1,000원/청소년 600원"
+  },
+  {
+    "id": "geomun-oreum",
+    "name": "거문오름",
+    "category": "attraction",
+    "address": "제주 제주시 조천읍 선교로 569-36",
+    "tags": [
+      "자연",
+      "사진",
+      "혼자",
+      "친구들"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "제주특별자치도 제주시 조천읍 선흘리와 구좌읍 송당리 경계지대에 발달한 오름",
+    "openingHours": "09:00-13:00",
+    "phone": "064-710-8981",
+    "priceInfo": "성인 2,000원/청소년 1,000원"
+  },
+  {
+    "id": "health-and-sex-museum",
+    "name": "건강과성박물관",
+    "category": "attraction",
+    "address": "제주 서귀포시 안덕면 일주서로 1611 건강과 성 박물관",
+    "tags": [
+      "문화",
+      "친구들",
+      "더보기"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "인체와 성에 대한 정보를 전시하는 독특한 테마 박물관입니다.",
+    "openingHours": "09:00-18:00",
+    "phone": "064-792-5700",
+    "priceInfo": "개인 15,000원"
+  },
+  {
+    "id": "gwakji-beach",
+    "name": "곽지해수욕장",
+    "category": "attraction",
+    "address": "제주 제주시 애월읍 곽지리",
+    "tags": [
+      "자연",
+      "사진",
+      "친구들",
+      "가족여행"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "제주시에 위치한 곽지해수욕장은 입지가 좋아 주변에 청소년 수련장이 설치되고 단체 피서객이 많이 찾는 제주 명소이다.",
+    "openingHours": "정보없음",
+    "phone": "064-728-3985",
+    "priceInfo": "무료"
+  },
+  {
+    "id": "gwandukjeong",
+    "name": "관덕정",
+    "category": "attraction",
+    "address": "제주특별자치도 제주시 관덕로 19 관덕정",
+    "tags": [
+      "문화",
+      "사진"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "제주에서 가장 오래된 누각으로 조선 시대의 건축미를 간직한 역사 유적입니다.",
+    "openingHours": "09:00-18:00",
+    "phone": "064-710-6717",
+    "priceInfo": "성인 1,500원/청소년 800원"
+  },
+  {
+    "id": "nexon-computer-museum",
+    "name": "넥슨컴퓨터박물관",
+    "category": "attraction",
+    "address": "제주 제주시 1100로 3198-8 넥슨컴퓨터박물관",
+    "tags": [
+      "문화",
+      "친구들",
+      "가족여행"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "넥슨컴퓨터박물관은 인류의 삶을 가장 빠르게 변화시킨 현재 진행형 매체인 컴퓨터와 그 발전에 기여해 온 게임의 역사를 함께 조망함으로써 우리의 미래를 상상해 볼 수 있는 체험형 박물관이다",
+    "openingHours": "10:00-18:00",
+    "phone": "064-745-1994",
+    "priceInfo": "성인 8,000원/청소년 7,000원"
+  },
+  {
+    "id": "nohyung-supermarket",
+    "name": "노형슈퍼마켙",
+    "category": "attraction",
+    "address": "제주 제주시 노형로 89",
+    "tags": [
+      "사진",
+      "친구들",
+      "가족여행"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "감성 있는 전시와 포토존들이 가득한 제주 대표 복합 문화 공간입니다.",
+    "openingHours": "09:00-19:00",
+    "phone": "064-713-1888",
+    "priceInfo": "성인 15,000원/청소년 13,000원"
+  },
+  {
+    "id": "darangshi-oreum",
+    "name": "다랑쉬오름",
+    "category": "attraction",
+    "address": "제주 제주시 구좌읍 세화리",
+    "tags": [
+      "자연",
+      "사진",
+      "혼자"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "아끈다랑쉬오름은 다랑쉬오름에 아끈이라는 접두어가 붙은 것인데, 제주 말로 ‘아끈’이란 ‘작은’을 뜻한다",
+    "openingHours": "정보없음",
+    "phone": "정보없음",
+    "priceInfo": "정보없음"
+  },
+  {
+    "id": "dongmun-market",
+    "name": "동문재래시장",
+    "category": "attraction",
+    "address": "제주 제주시 관덕로14길 20",
+    "tags": [
+      "친구들",
+      "가족여행",
+      "더보기"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "제주의 다양한 먹거리와 상점들이 모여 있는 활기찬 전통 재래시장입니다.",
+    "openingHours": "08:00-21:00",
+    "phone": "064-752-3001",
+    "priceInfo": "품목별 상이"
+  },
+  {
+    "id": "camellia-forest",
+    "name": "동백포레스트",
+    "category": "attraction",
+    "address": "제주 서귀포시 남원읍 생기악로 53-38",
+    "tags": [
+      "반려동물 동반",
+      "자연",
+      "사진"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "동백나무 숲길 사이로 산책을 즐길 수 있는 계절별 포토 스폿입니다.",
+    "openingHours": "10:00-17:00",
+    "phone": "0507-1331-2102",
+    "priceInfo": "품목별 상이"
+  },
+  {
+    "id": "deurkumda-seongsan",
+    "name": "드르쿰다in성산",
+    "category": "attraction",
+    "address": "제주 서귀포시 성산읍 섭지코지로25번길 64",
+    "tags": [
+      "반려동물 동반",
+      "휴식",
+      "사진"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "푸른 초원과 목장이 어우러진 감성 카페 겸 포토 명소입니다.",
+    "openingHours": "09:00-17:30",
+    "phone": "0507-1303-2197",
+    "priceInfo": "품목별 상이"
+  },
+  {
+    "id": "manjanggul",
+    "name": "만장굴",
+    "category": "attraction",
+    "address": "제주 제주시 구좌읍 만장굴길 182",
+    "tags": [
+      "자연",
+      "가족여행",
+      "친구들"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "세계 자연유산으로 지정된 거대한 용암동굴로 신비로운 지형을 감상할 수 있습니다.",
+    "openingHours": "정보없음",
+    "phone": "정보없음",
+    "priceInfo": "정보없음"
+  },
+  {
+    "id": "marado",
+    "name": "마라도",
+    "category": "attraction",
+    "address": "제주 서귀포시 대정읍 마라로101번길 46-1",
+    "tags": [
+      "자연",
+      "가족여행",
+      "친구들"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "마라도는 한국 최남단의 섬이다.",
+    "openingHours": "정보없음",
+    "phone": "064-120",
+    "priceInfo": "입도(배편) 요금 별도"
+  },
+  {
+    "id": "maze-land",
+    "name": "메이즈랜드",
+    "category": "attraction",
+    "address": "제주 제주시 구좌읍 비자림로 2134-47 메이즈랜드",
+    "tags": [
+      "반려동물 동반",
+      "가족여행",
+      "친구들",
+      "액티비티"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "다양한 테마의 미로를 즐길 수 있는 가족 친화형 체험 관광지입니다.",
+    "openingHours": "계절 및 현장 상황에 따라 변동",
+    "phone": "064-784-3838",
+    "priceInfo": "성인 16,000원/청소년 14,000원"
+  },
+  {
+    "id": "deurkumda-café",
+    "name": "목장카페 드르쿰다",
+    "category": "attraction",
+    "address": "제주 서귀포시 표선면 번영로 2454",
+    "tags": [
+      "반려동물 동반",
+      "휴식",
+      "사진"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "넓은 초원 위 목장에서 여유로운 분위기를 즐길 수 있는 감성 카페입니다.",
+    "openingHours": "09:00-18:00",
+    "phone": "064-787-5220",
+    "priceInfo": "품목별 상이"
+  },
+  {
+    "id": "bangju-church",
+    "name": "방주교회",
+    "category": "attraction",
+    "address": "제주 서귀포시 안덕면 산록남로762번길 113",
+    "tags": [
+      "사진",
+      "문화"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "재일 교포 건축가로 일본과 한국에서 주로 활동하면서 건축물이 세워질 장소의 고유한 풍토, 지역성을 살려 인간의 삶에 어우러지는 건축을 추구하는 이타미 준(유동룡)이 노아의 방주를 모티브로 설계한 교회로, 아름다운 건축물로 유명하다.",
+    "openingHours": "계절 및 현장 상황에 따라 변동",
+    "phone": "064-794-0611",
+    "priceInfo": "무료"
+  },
+  {
+    "id": "udo-island",
+    "name": "우도",
+    "category": "attraction",
+    "address": "제주 제주시 우도면",
+    "tags": [
+      "자연",
+      "친구들",
+      "가족여행",
+      "사진"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "제주도의 가장 큰 섬인 우도(牛島)는 소섬이라고도 부른다.",
+    "openingHours": "정보없음",
+    "phone": "064-782-5671",
+    "priceInfo": "입도(배편) 요금 별도"
+  },
+  {
+    "id": "bunker-of-light",
+    "name": "빛의벙커",
+    "category": "attraction",
+    "address": "제주 서귀포시 성산읍 서성일로1168번길 89-17 A동",
+    "tags": [
+      "문화",
+      "사진",
+      "휴식",
+      "친구들"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "거대한 실내 공간에 몰입형 미디어아트 전시가 펼쳐지는 예술 전시관입니다.",
+    "openingHours": "10:00-18:20",
+    "phone": "1522-2653",
+    "priceInfo": "성인 19,000원/청소년 14,000원"
+  },
+  {
+    "id": "saebyeol-friends",
+    "name": "새별프렌즈",
+    "category": "attraction",
+    "address": "제주 제주시 애월읍 평화로 1529 새별프렌즈 동물원",
+    "tags": [
+      "가족여행",
+      "친구들",
+      "반려동물 동반"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "동물들과 교감하며 체험을 즐길 수 있는 자연형 애니멀파크입니다.",
+    "openingHours": "09:00-18:00",
+    "phone": "064-794-2828",
+    "priceInfo": "일반 18,000원"
+  },
+  {
+    "id": "seopjikoji",
+    "name": "섭지코지",
+    "category": "attraction",
+    "address": "제주 서귀포시 성산읍 고성리",
+    "tags": [
+      "자연",
+      "사진",
+      "가족여행"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "섭지코지는 코지(코지곶을 의미하는 제주 방언)라는 지명에서 알 수 있듯 코의 끄트리 모양 비죽 튀어나온 지형이다.",
+    "openingHours": "정보없음",
+    "phone": "064-782-2810",
+    "priceInfo": "무료"
+  },
+  {
+    "id": "seongeup-folk-village",
+    "name": "성읍민속마을",
+    "category": "attraction",
+    "address": "제주 서귀포시 표선면 성읍리 3294",
+    "tags": [
+      "문화",
+      "가족여행"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "표선리에서 북쪽으로 8㎞쯤 가면 한라산 기슭 아래 성읍마을이 있다. ",
+    "openingHours": "정보없음",
+    "phone": "064-710-6797",
+    "priceInfo": "무료"
+  },
+  {
+    "id": "osulloc-tea-museum",
+    "name": "오설록 티 뮤지엄",
+    "category": "attraction",
+    "address": "제주 서귀포시 안덕면 신화역사로 15 오설록",
+    "tags": [
+      "휴식",
+      "사진",
+      "가족여행",
+      "친구들"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "제주특별자치도 서귀포시 안덕면 서광리에 있는 사립 박물관.",
+    "openingHours": "09:00-18:00",
+    "phone": "0507-1418-5312",
+    "priceInfo": "품목별 상이"
+  },
+  {
+    "id": "cheonjiyeon-falls",
+    "name": "천지연폭포",
+    "category": "attraction",
+    "address": "제주 서귀포시 천지동 666-2",
+    "tags": [
+      "자연",
+      "사진",
+      "가족여행"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "서귀포시 서귀3리 서북쪽에 그 이름 높은 천지연폭포(天池淵瀑布)가 있다. 높이가 22미터이고, 너비가 12미터인 이 폭포는 골짜기 양쪽에 울창한 숲과 기이한 바위가 절경이다.",
+    "openingHours": "계절 및 현장 상황에 따라 변동",
+    "phone": "064-733-1528",
+    "priceInfo": "일반 2,000원/청소년 1,000원"
+  },
+  {
+    "id": "soesokkak",
+    "name": "쇠소깍",
+    "category": "attraction",
+    "address": "제주 서귀포시 쇠소깍로 104",
+    "tags": [
+      "자연",
+      "사진",
+      "액티비티",
+      "가족여행"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "쇠소깍은 한라산에서 서귀포시 하효동으로 흐르는 효돈천의 담수와 해수가 만나는 기수역에 위치하고 있는 하천지형이다",
+    "openingHours": "계절 및 현장 상황에 따라 변동",
+    "phone": "정보없음",
+    "priceInfo": "무료"
+  },
+  {
+    "id": "snoopy-garden",
+    "name": "스누피가든",
+    "category": "attraction",
+    "address": "제주 제주시 구좌읍 금백조로 930",
+    "tags": [
+      "가족여행",
+      "친구들",
+      "사진"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "스누피 가든 하우스는 감정에 솔직하고 개성 있는 피너츠 친구들을 만나 그들 간의 상호 관계를 통한 공감과 위로의 메시지를 얻는 곳이다.",
+    "openingHours": "계절 및 현장 상황에 따라 변동",
+    "phone": "064-805-1118",
+    "priceInfo": "성인 19,000원/청소년 16,000원"
+  },
+  {
+    "id": "shinhwa-theme-park",
+    "name": "신화테마파크",
+    "category": "attraction",
+    "address": "제주 서귀포시 안덕면 신화역사로304번길 98 신화테마파크",
+    "tags": [
+      "가족여행",
+      "액티비티",
+      "친구들"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "대형 놀이기구와 테마존이 마련된 제주 대표 가족형 테마파크입니다.",
+    "openingHours": "10:00-20:00",
+    "phone": "1670-1188",
+    "priceInfo": "품목별 상이"
+  },
+  {
+    "id": "aquaplanet-jeju",
+    "name": "아쿠아플라넷제주",
+    "category": "attraction",
+    "address": "제주 서귀포시 성산읍 섭지코지로 95 아쿠아플라넷 제주",
+    "tags": [
+      "가족여행",
+      "친구들",
+      "자연"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "대형 수조와 다양한 해양생물을 만날 수 있는 제주 최대 규모 아쿠아리움입니다.",
+    "openingHours": "09:30-18:00",
+    "phone": "1833-7001",
+    "priceInfo": "입장권 44,600원"
+  },
+  {
+    "id": "ecoland-theme-park",
+    "name": "에코랜드테마파크",
+    "category": "attraction",
+    "address": "제주 제주시 조천읍 번영로 1278-169",
+    "tags": [
+      "가족여행",
+      "사진",
+      "휴식"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "기차를 타고 숲과 호수를 둘러보는 자연 친화형 체험 테마파크입니다",
+    "openingHours": "08:30-17:30",
+    "phone": "064-802-8000",
+    "priceInfo": "성인 19,000원/청소년 16,000원"
+  },
+  {
+    "id": "yongmeori-coast",
+    "name": "용머리해안",
+    "category": "attraction",
+    "address": "제주 서귀포시 안덕면 사계리 112-3",
+    "tags": [
+      "자연",
+      "사진",
+      "가족여행"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "화산이 쌓고 파도가 깎은 제주 사계리 용머리 해안",
+    "openingHours": "계절 및 현장 상황에 따라 변동",
+    "phone": "064-760-6321",
+    "priceInfo": "성인 2,000원/청소년 1,000원"
+  },
+  {
+    "id": "jungmun-saekdal-beach",
+    "name": "중문색달해수욕장",
+    "category": "attraction",
+    "address": "제주 서귀포시 색달동",
+    "tags": [
+      "자연",
+      "사진",
+      "친구들",
+      "가족여행",
+      "반려동물 동반"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "중문색달해수욕장은 아름다운 해안 풍경과 야자수의 이국적인 모습을 가진 해변으로 중문관광단지에서 시작해 천제연폭포와 대포주상절리와 이어지는 곳에 있다.",
+    "openingHours": "정보없음",
+    "phone": "064-739-4993",
+    "priceInfo": "무료"
+  },
+  {
+    "id": "jongdal-ri-beach",
+    "name": "종달리해변",
+    "category": "attraction",
+    "address": "제주 제주시 구좌읍 종달리 565-72",
+    "tags": [
+      "자연",
+      "사진",
+      "친구들"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "맑고 잔잔한 바다와 드라이브 코스로 유명한 제주 동부의 해변입니다.",
+    "openingHours": "정보없음",
+    "phone": "064-728-7711",
+    "priceInfo": "무료"
+  },
+  {
+    "id": "figure-museum-jeju",
+    "name": "피규어뮤지엄제주",
+    "category": "attraction",
+    "address": "제주 서귀포시 안덕면 한창로 243",
+    "tags": [
+      "친구들",
+      "가족여행",
+      "문화"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "다양한 피규어와 캐릭터 전시를 감상할 수 있는 체험형 박물관입니다.",
+    "openingHours": "09:30-18:00",
+    "phone": "0507-1433-2264",
+    "priceInfo": "성인 14,000원/청소년 12,000원"
+  },
+  {
+    "id": "hallasan-national-park",
+    "name": "한라산국립공원",
+    "category": "attraction",
+    "address": "제주 제주시 오라이동 산107-20",
+    "tags": [
+      "자연",
+      "사진",
+      "액티비티",
+      "혼자",
+      "가족여행"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "다양한 등산 코스와 자연생태를 즐길 수 있는 제주 최고의 산악 관광지입니다.",
+    "openingHours": "계절 및 현장 상황에 따라 변동",
+    "phone": "정보없음",
+    "priceInfo": "무료"
+  },
+  {
+    "id": "hallim-park",
+    "name": "한림공원",
+    "category": "attraction",
+    "address": "제주 제주시 한림읍 한림로 300",
+    "tags": [
+      "반려동물 동반",
+      "자연",
+      "사진",
+      "가족여행"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "아열대 식물원과 동굴, 정원이 어우러진 제주 대표 정원형 관광지입니다.",
+    "openingHours": "09:00-17:30",
+    "phone": "064-796-0001",
+    "priceInfo": "일반 15,000원/청소년 10,000원"
+  },
+  {
+    "id": "hamdeok-beach",
+    "name": "함덕해수욕장",
+    "category": "attraction",
+    "address": "제주 제주시 조천읍 조함해안로 525",
+    "tags": [
+      "자연",
+      "사진",
+      "친구들",
+      "가족여행",
+      "반려동물 동반"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "푸른 잉크 속으로 풍덩 고운 백사장과 얕은 바다 속 패사층이 만들어내는 푸른빛 바다가 아름다운 해수욕장이다.",
+    "openingHours": "정보없음",
+    "phone": "064-728-3989",
+    "priceInfo": "무료"
+  },
+  {
+    "id": "hueree-nature-park",
+    "name": "휴애리 자연생활공원",
+    "category": "attraction",
+    "address": "제주 서귀포시 남원읍 신례동로 256",
+    "tags": [
+      "가족여행",
+      "자연",
+      "사진",
+      "반려동물 동반"
+    ],
+    "thumbnailUrl": null,
+    "descriptionShort": "휴애리는 수많은 꽃들과 한라산 풍경이 더해져 더욱 아름다움을 자랑하는 꽃 정원이다. ",
+    "openingHours": "09:00-18:00",
+    "phone": "064-732-2114",
+    "priceInfo": "성인 13,000원/청소년 11,000원"
+  },
+  {
+    "id": null,
+    "name": "그랜드 조선 제주",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "그랜드 하얏트 제주",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "제주신라호텔",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "메종 글래드 제주",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "파르나스 호텔 제주",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "롯데 호텔 제주",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "랜딩관 제주신화얼드 호텔앤리조트",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "신라스테이 제주",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "신라스테이 플러스 이호테우 오션 프론트",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "에코랜드 호텔",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "호텔 휘슬락 제주",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "해비치 호텔&리조트 제주",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "롯데시티호텔 제주",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "켄싱턴리조트 서귀포",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "서귀포 늘바다 애견동반 펜션",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "돈내코펜션",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "함덕 인피니티 펜션 리조트",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "씨사이드아덴",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "제주 에코 스위츠",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "오션브릭 풀빌라",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "크리스마스 리조트",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "제주 스테이이든 독채 풀빌라 펜션",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "히든 클리프 호텔&네이쳐",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "다인 오세아노 호텔",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "한화 리조트 제주",
+    "category": "stay",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "숙성도 제주본점",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "칠돈가 성산점",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "돈사돈 본관",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "흑돈가 제주본점",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "별돈별 중문본점",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "우진해장국 제주공항",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "김희선 몸국 제주공항근처",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "김재훈고사리육개장 제주시",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "천짓골식당 서귀포",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "제주미담 제주시",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "가시식당 표션",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "은희네해장국표전",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "대춘해장국 본점",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "자매국수 제주시",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "올래국수 신제주",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "모던돔베 제주노형본점",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "골막식당 제주시",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "갈치왕 중문점",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "춘심이네 본점",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "제주광해 애월",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "황해식당 제주시",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "한림칼국수 제주본점",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "해녀의집 애월",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "도두항식당 도두",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "부촌 성산",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "월정리갈비밥 월정리",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "미친부엌 제주본점",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "애월연어 애월",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "식당마요네즈 제주시",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "페를로 안덕면",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "미미 제주",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "둘레길 중문",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "양가형제 제주",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "하하호호 우도",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "피즈 애월",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "오는정김밥 서귀포",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "제주김만복 본점",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "다정이네 서귀포시",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "사랑분식 동문시장",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "도토리키친 본점",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "난산리다방 제주성산",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "당당 애월",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "늘봄흑돼지 제주시",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "아베베베이커리 제주동문시장",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  },
+  {
+    "id": null,
+    "name": "가시아방국수 성산",
+    "category": "food",
+    "address": null,
+    "tags": [],
+    "thumbnailUrl": null,
+    "descriptionShort": null,
+    "openingHours": null,
+    "phone": null,
+    "priceInfo": null
+  }
+]
