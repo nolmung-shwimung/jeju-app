@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import List from "./pages/List";
 import Detail from "./pages/Detail";
 import Login from "./pages/Login";
+import PlaceDetailPage from "./pages/PlaceDetailPage";
 
 export default function App() {
   const navClass =
@@ -51,6 +52,7 @@ export default function App() {
           <Route path="/list" element={<List />} />
           <Route path="/detail/:id" element={<Detail />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/place/:id" element={<PlaceDetailPage />} />
         </Routes>
       </main>
 
