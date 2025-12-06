@@ -16,6 +16,10 @@ interface Spot {
   priceInfo: string | null;
 }
 
+// 공백 제거 + 소문자 변환 → "호 텔" == "호텔"
+const normalize = (s: string | null | undefined) =>
+  (s ?? "").toLowerCase().replace(/\s+/g, "");
+
 export default function List() {
   const [sp] = useSearchParams();
 
@@ -28,6 +32,10 @@ export default function List() {
   const selectedTags = (sp.get("tags") || "")
     .split(",")
     .filter(Boolean);
+
+  // 검색어 (홈에서 /list?q=검색어 로 넘어옴)
+  const rawQ = (sp.get("q") || "").trim();
+  const qNorm = normalize(rawQ);
 
   const [spots, setSpots] = useState<Spot[]>([]);
   const [loading, setLoading] = useState(true);
@@ -69,27 +77,40 @@ export default function List() {
   const spotsByCat =
     cat === "all" ? spots : spots.filter((s) => s.category === cat);
 
-  // 2) 태그 필터
-  const filtered: Spot[] =
+  // 2) 태그 필터 (URL의 tags=... 로 넘어온 것)
+  const byTag: Spot[] =
     selectedTags.length === 0
       ? spotsByCat
       : spotsByCat.filter((spot) =>
           spot.tags?.some((t) => selectedTags.includes(t))
         );
 
-  // 3) 최종 카테고리 체크
-  const listToShow =
-    cat === "all"
-      ? filtered
-      : filtered.filter((spot) => spot.category === cat);
+  // 3) 검색어 필터 (이름 / 주소 / 태그 텍스트)
+  const listToShow: Spot[] = !qNorm
+    ? byTag
+    : byTag.filter((spot) => {
+        const nameMatch = normalize(spot.name).includes(qNorm);
+        const addressMatch = normalize(spot.address).includes(qNorm);
+        const tagMatch = (spot.tags || []).some((tag) =>
+          normalize(tag).includes(qNorm)
+        );
+        return nameMatch || addressMatch || tagMatch;
+      });
 
   return (
     <div className="max-w-screen-2xl mx-auto px-4 py-8 space-y-6">
       <h1 className="text-2xl font-bold">검색 결과</h1>
 
-      <div className="text-sm text-gray-600">
-        카테고리: <b>{cat}</b> / 태그:{" "}
-        <b>{selectedTags.length ? selectedTags.join(", ") : "선택 없음"}</b>
+      <div className="text-sm text-gray-600 space-y-1">
+        <div>
+          카테고리: <b>{cat}</b> / 태그:{" "}
+          <b>{selectedTags.length ? selectedTags.join(", ") : "선택 없음"}</b>
+        </div>
+        {rawQ && (
+          <div>
+            검색어: <b>{rawQ}</b>
+          </div>
+        )}
       </div>
 
       <TagChips compact category={cat} />
@@ -100,21 +121,11 @@ export default function List() {
         </div>
       )}
 
-      {!loading && selectedTags.length === 0 && (
-        <div className="w-full p-6 border rounded-xl bg-gray-50 text-gray-600">
-          <div className="font-semibold">리스트</div>
-          <div className="text-sm mt-1">
-            현재 선택한 카테고리의 모든 장소가 표시됩니다.
-            태그를 선택하면 더 정확한 추천으로 좁혀져요. (예: 자연, 가족여행 등)
-          </div>
-        </div>
-      )}
-
-      {!loading && selectedTags.length > 0 && listToShow.length === 0 && (
+      {!loading && listToShow.length === 0 && (
         <div className="w-full p-6 border rounded-xl bg-gray-50 text-gray-600">
           <div className="font-semibold">결과 없음</div>
           <div className="text-sm mt-1">
-            선택한 태그에 해당하는 데이터가 아직 없습니다.
+            선택한 카테고리 / 태그 / 검색어에 해당하는 장소가 없습니다.
           </div>
         </div>
       )}
