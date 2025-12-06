@@ -1,46 +1,33 @@
-// src/components/MapView.tsx
-import React from "react";
-import {
-  GoogleMap,
-  Marker,
-  useJsApiLoader,
-} from "@react-google-maps/api";
+import { useEffect, useRef } from "react";
+import { loadGoogleMaps } from "@/utils/loadGoogleMaps";
 
 interface MapViewProps {
   lat: number;
   lng: number;
+  name: string;
 }
 
-const containerStyle: React.CSSProperties = {
-  width: "100%",
-  height: "300px",
-  borderRadius: "16px",
-  overflow: "hidden",
-};
+export default function MapView({ lat, lng, name }: MapViewProps) {
+  const mapRef = useRef<HTMLDivElement>(null);
 
-const MapView: React.FC<MapViewProps> = ({ lat, lng }) => {
-  const { isLoaded, loadError } = useJsApiLoader({
-    id: "google-map-script",
-    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY as string,
-  });
+  useEffect(() => {
+    const initMap = async () => {
+      await loadGoogleMaps(import.meta.env.VITE_GOOGLE_MAPS_KEY);
 
-  if (loadError) {
-    return <div>지도를 불러오는 중 오류가 발생했습니다.</div>;
-  }
+      const map = new window.google.maps.Map(mapRef.current!, {
+        center: { lat, lng },
+        zoom: 15,
+      });
 
-  if (!isLoaded) {
-    return <div>지도를 불러오는 중입니다...</div>;
-  }
+      new window.google.maps.Marker({
+        position: { lat, lng },
+        map,
+        title: name,
+      });
+    };
 
-  return (
-    <GoogleMap
-      mapContainerStyle={containerStyle}
-      center={{ lat, lng }}
-      zoom={14}
-    >
-      <Marker position={{ lat, lng }} />
-    </GoogleMap>
-  );
-};
+    initMap();
+  }, [lat, lng, name]);
 
-export default MapView;
+  return <div ref={mapRef} className="w-full h-full rounded-xl" />;
+}
