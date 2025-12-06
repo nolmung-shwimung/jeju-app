@@ -16,6 +16,7 @@ interface Spot {
   priceInfo: string | null;
   lat: number;
   lng: number;
+   // 관광지 요금 / 숙소 등급 / 음식점 부가 정보 등
 }
 
 export default function Detail() {
@@ -70,6 +71,36 @@ export default function Detail() {
       </div>
     );
   }
+
+  // 🔎 카테고리별 아이콘 + 기본 문구
+  const renderExtraInfo = () => {
+    if (spot.category === "stay") {
+      return (
+        <>
+          <span className="mr-1">⭐</span>
+          <span>{spot.priceInfo || "등급 정보 없음"}</span>
+        </>
+      );
+    }
+
+    if (spot.category === "food") {
+      // 예: "주차 가능 / 예약 가능 / 단체 가능 / 무선 인터넷 / 남녀 화장실 구분"
+      return (
+        <>
+          <span className="mr-1">🍽</span>
+          <span>{spot.priceInfo || "부가 정보 없음"}</span>
+        </>
+      );
+    }
+
+    // 기본: 관광지, 기타
+    return (
+      <>
+        <span className="mr-1">💰</span>
+        <span>{spot.priceInfo || "요금 정보 없음"}</span>
+      </>
+    );
+  };
 
   return (
     <div className="max-w-screen-2xl mx-auto px-4 py-8 space-y-8">
@@ -135,10 +166,8 @@ export default function Detail() {
               <span>{spot.phone || "연락처 정보 없음"}</span>
             </div>
 
-            <div>
-              <span className="mr-1">💰</span>
-              <span>{spot.priceInfo || "요금 정보 없음"}</span>
-            </div>
+            {/* 💰 / ⭐ / 🍽 카테고리별로 다르게 표시 */}
+            <div>{renderExtraInfo()}</div>
           </div>
         </div>
 
