@@ -8,12 +8,12 @@ const PlaceDetailPage: React.FC = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // 지금은 예시로 성산일출봉 고정 데이터 사용
-  // 나중에 id에 따라 데이터 바꾸면 됨!
+  // 성산일출봉 예시
+  // id에 따라 데이터 바꾸기
   const place = {
     name: "성산일출봉",
     category: "관광지",
-    imageUrl: "/images/sungsan.jpg", // public/images/sungsan.jpg 넣어두면 좋아
+    imageUrl: "/images/sungsan.jpg", // 이미지
     address: "제주특별자치도 서귀포시 성산읍 성산리",
     openingHours: "07:00 - 20:00 (연중무휴)",
     phone: "064-783-0959",
