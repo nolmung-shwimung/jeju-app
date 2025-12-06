@@ -17,6 +17,7 @@ export default function MapView({ lat, lng, name }: MapViewProps) {
   const mapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    console.log("GOOGLE KEY:", import.meta.env.VITE_GOOGLE_MAPS_KEY);
     const initMap = async () => {
       await loadGoogleMaps(import.meta.env.VITE_GOOGLE_MAPS_KEY);
 
@@ -35,5 +36,8 @@ export default function MapView({ lat, lng, name }: MapViewProps) {
     initMap();
   }, [lat, lng, name]);
 
-  return <div ref={mapRef} className="w-full h-full rounded-xl" />;
+   return (
+    <div ref={mapRef} className="w-full h-full rounded-xl" />
+  );
 }
+

@@ -141,10 +141,12 @@ export default function Detail() {
         </div>
 
         {/* 지도 placeholder */}
-        <div className="p-4 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400">
-        <MapView lat={spot.lat} lng={spot.lng} name={spot.name} />
-        </div>
-      </section>
+  <div className="p-4 rounded-xl bg-gray-50">
+    <div className="w-full h-64 rounded-xl overflow-hidden">
+      <MapView lat={spot.lat} lng={spot.lng} name={spot.name} />
+    </div>
+  </div>
+</section>
     </div>
   );
 }

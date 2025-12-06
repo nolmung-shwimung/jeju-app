@@ -15,7 +15,9 @@
     "descriptionShort": "제주의 대표적인 일출 명소",
     "openingHours": "07:00 - 20:00",
     "phone": "064-783-0959",
-    "priceInfo": "성인 5,000원"
+    "priceInfo": "성인 5,000원",
+     "lat": 33.4589,
+     "lng": 126.9430
   },
   {
     "id": "saebyeol-oreum",
@@ -33,7 +35,9 @@
     "descriptionShort": "제주특별자치도 제주시 애월읍 봉성리에 위치한 측화산이다",
     "openingHours": "정보없음",
     "phone": "정보없음",
-    "priceInfo": "무료"
+    "priceInfo": "무료",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "saryeoni-forest-path",
@@ -51,7 +55,9 @@
     "descriptionShort": "한라산둘레길7구간",
     "openingHours": "정보없음",
     "phone": "064-900-8800",
-    "priceInfo": "무료"
+    "priceInfo": "무료",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "samyang-beach",
@@ -70,7 +76,9 @@
     "descriptionShort": "검은 모래가 펼쳐진 제주만의 독특한 분위기를 가진 해수욕장입니다.",
     "openingHours": "정보없음",
     "phone": "064-728-3991",
-    "priceInfo": "무료"
+    "priceInfo": "무료",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "sanbangsan",
@@ -87,7 +95,9 @@
     "descriptionShort": "산방산은 제주 서남부 지역의 평탄한 지형 위에 우뚝 솟은 타원형의 돔형(dome) 화산으로 한라산, 성산일출봉과 함께 제주의 3대 산으로 불린다.",
     "openingHours": "09:00-18:00",
     "phone": "064-794-2940",
-    "priceInfo": "무료"
+    "priceInfo": "무료",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "dodudong-rainbow-road",
@@ -103,7 +113,9 @@
     "descriptionShort": "형형색색의 방파제와 바다 전망이 어우러진 인기 드라이브·포토 스폿입니다.",
     "openingHours": "정보없음",
     "phone": "정보없음",
-    "priceInfo": "무료"
+    "priceInfo": "무료",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "donneko",
@@ -119,7 +131,9 @@
     "descriptionShort": "푸른 천연 계곡과 울창한 숲이 어우러진 한여름 피서지로 유명한 자연 휴식 공간입니다.",
     "openingHours": "정보없음",
     "phone": "정보없음",
-    "priceInfo": "무료"
+    "priceInfo": "무료",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "gimnyeong-beach",
@@ -137,7 +151,9 @@
     "descriptionShort": "에메랄드빛 바다와 고운 백사장이 아름다운 제주 동부 대표 해수욕장입니다.",
     "openingHours": "정보없음",
     "phone": "064-728-3988",
-    "priceInfo": "무료"
+    "priceInfo": "무료",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "geum-oreum",
@@ -154,7 +170,9 @@
     "descriptionShort": "서부 중산간 지역의 대표적인 오름 중의 하나이다. ",
     "openingHours": "정보없음",
     "phone": "정보없음",
-    "priceInfo": "정보없음"
+    "priceInfo": "정보없음",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "geumneung-beach",
@@ -171,7 +189,9 @@
     "descriptionShort": "파란 물감을 풀어놓은 것 같은 바다부터 생김새가 귀여운 비양도, 촉감이 보슬거리는 모래사장까지 이웃한 해변과 비슷한 풍경을 품고 있지만 그보다 사람이 붐비지 않아 여유로운 것이 매력이다.",
     "openingHours": "정보없음",
     "phone": "064-728-3983",
-    "priceInfo": "무료"
+    "priceInfo": "무료",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "gyorae-forest-park",
@@ -187,7 +207,9 @@
     "descriptionShort": "제주의 곶자왈 지역에 조성된 자연휴양림",
     "openingHours": "정보없음",
     "phone": "064-710-7475",
-    "priceInfo": "성인 1,000원/청소년 600원"
+    "priceInfo": "성인 1,000원/청소년 600원",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "geomun-oreum",
@@ -204,7 +226,9 @@
     "descriptionShort": "제주특별자치도 제주시 조천읍 선흘리와 구좌읍 송당리 경계지대에 발달한 오름",
     "openingHours": "09:00-13:00",
     "phone": "064-710-8981",
-    "priceInfo": "성인 2,000원/청소년 1,000원"
+    "priceInfo": "성인 2,000원/청소년 1,000원",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "health-and-sex-museum",
@@ -220,7 +244,9 @@
     "descriptionShort": "인체와 성에 대한 정보를 전시하는 독특한 테마 박물관입니다.",
     "openingHours": "09:00-18:00",
     "phone": "064-792-5700",
-    "priceInfo": "개인 15,000원"
+    "priceInfo": "개인 15,000원",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "gwakji-beach",
@@ -237,7 +263,9 @@
     "descriptionShort": "제주시에 위치한 곽지해수욕장은 입지가 좋아 주변에 청소년 수련장이 설치되고 단체 피서객이 많이 찾는 제주 명소이다.",
     "openingHours": "정보없음",
     "phone": "064-728-3985",
-    "priceInfo": "무료"
+    "priceInfo": "무료",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "gwandukjeong",
@@ -252,7 +280,9 @@
     "descriptionShort": "제주에서 가장 오래된 누각으로 조선 시대의 건축미를 간직한 역사 유적입니다.",
     "openingHours": "09:00-18:00",
     "phone": "064-710-6717",
-    "priceInfo": "성인 1,500원/청소년 800원"
+    "priceInfo": "성인 1,500원/청소년 800원",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "nexon-computer-museum",
@@ -268,7 +298,9 @@
     "descriptionShort": "넥슨컴퓨터박물관은 인류의 삶을 가장 빠르게 변화시킨 현재 진행형 매체인 컴퓨터와 그 발전에 기여해 온 게임의 역사를 함께 조망함으로써 우리의 미래를 상상해 볼 수 있는 체험형 박물관이다",
     "openingHours": "10:00-18:00",
     "phone": "064-745-1994",
-    "priceInfo": "성인 8,000원/청소년 7,000원"
+    "priceInfo": "성인 8,000원/청소년 7,000원",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "nohyung-supermarket",
@@ -284,7 +316,9 @@
     "descriptionShort": "감성 있는 전시와 포토존들이 가득한 제주 대표 복합 문화 공간입니다.",
     "openingHours": "09:00-19:00",
     "phone": "064-713-1888",
-    "priceInfo": "성인 15,000원/청소년 13,000원"
+    "priceInfo": "성인 15,000원/청소년 13,000원",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "darangshi-oreum",
@@ -300,7 +334,9 @@
     "descriptionShort": "아끈다랑쉬오름은 다랑쉬오름에 아끈이라는 접두어가 붙은 것인데, 제주 말로 ‘아끈’이란 ‘작은’을 뜻한다",
     "openingHours": "정보없음",
     "phone": "정보없음",
-    "priceInfo": "정보없음"
+    "priceInfo": "정보없음",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "dongmun-market",
@@ -316,7 +352,9 @@
     "descriptionShort": "제주의 다양한 먹거리와 상점들이 모여 있는 활기찬 전통 재래시장입니다.",
     "openingHours": "08:00-21:00",
     "phone": "064-752-3001",
-    "priceInfo": "품목별 상이"
+    "priceInfo": "품목별 상이",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "camellia-forest",
@@ -332,7 +370,9 @@
     "descriptionShort": "동백나무 숲길 사이로 산책을 즐길 수 있는 계절별 포토 스폿입니다.",
     "openingHours": "10:00-17:00",
     "phone": "0507-1331-2102",
-    "priceInfo": "품목별 상이"
+    "priceInfo": "품목별 상이",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "deurkumda-seongsan",
@@ -348,7 +388,9 @@
     "descriptionShort": "푸른 초원과 목장이 어우러진 감성 카페 겸 포토 명소입니다.",
     "openingHours": "09:00-17:30",
     "phone": "0507-1303-2197",
-    "priceInfo": "품목별 상이"
+    "priceInfo": "품목별 상이",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "manjanggul",
@@ -364,7 +406,9 @@
     "descriptionShort": "세계 자연유산으로 지정된 거대한 용암동굴로 신비로운 지형을 감상할 수 있습니다.",
     "openingHours": "정보없음",
     "phone": "정보없음",
-    "priceInfo": "정보없음"
+    "priceInfo": "정보없음",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "marado",
@@ -380,7 +424,9 @@
     "descriptionShort": "마라도는 한국 최남단의 섬이다.",
     "openingHours": "정보없음",
     "phone": "064-120",
-    "priceInfo": "입도(배편) 요금 별도"
+    "priceInfo": "입도(배편) 요금 별도",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "maze-land",
@@ -397,7 +443,9 @@
     "descriptionShort": "다양한 테마의 미로를 즐길 수 있는 가족 친화형 체험 관광지입니다.",
     "openingHours": "계절 및 현장 상황에 따라 변동",
     "phone": "064-784-3838",
-    "priceInfo": "성인 16,000원/청소년 14,000원"
+    "priceInfo": "성인 16,000원/청소년 14,000원",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "deurkumda-café",
@@ -413,7 +461,9 @@
     "descriptionShort": "넓은 초원 위 목장에서 여유로운 분위기를 즐길 수 있는 감성 카페입니다.",
     "openingHours": "09:00-18:00",
     "phone": "064-787-5220",
-    "priceInfo": "품목별 상이"
+    "priceInfo": "품목별 상이",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "bangju-church",
@@ -428,7 +478,9 @@
     "descriptionShort": "재일 교포 건축가로 일본과 한국에서 주로 활동하면서 건축물이 세워질 장소의 고유한 풍토, 지역성을 살려 인간의 삶에 어우러지는 건축을 추구하는 이타미 준(유동룡)이 노아의 방주를 모티브로 설계한 교회로, 아름다운 건축물로 유명하다.",
     "openingHours": "계절 및 현장 상황에 따라 변동",
     "phone": "064-794-0611",
-    "priceInfo": "무료"
+    "priceInfo": "무료",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "udo-island",
@@ -445,7 +497,9 @@
     "descriptionShort": "제주도의 가장 큰 섬인 우도(牛島)는 소섬이라고도 부른다.",
     "openingHours": "정보없음",
     "phone": "064-782-5671",
-    "priceInfo": "입도(배편) 요금 별도"
+    "priceInfo": "입도(배편) 요금 별도",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "bunker-of-light",
@@ -462,7 +516,9 @@
     "descriptionShort": "거대한 실내 공간에 몰입형 미디어아트 전시가 펼쳐지는 예술 전시관입니다.",
     "openingHours": "10:00-18:20",
     "phone": "1522-2653",
-    "priceInfo": "성인 19,000원/청소년 14,000원"
+    "priceInfo": "성인 19,000원/청소년 14,000원",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "saebyeol-friends",
@@ -478,7 +534,9 @@
     "descriptionShort": "동물들과 교감하며 체험을 즐길 수 있는 자연형 애니멀파크입니다.",
     "openingHours": "09:00-18:00",
     "phone": "064-794-2828",
-    "priceInfo": "일반 18,000원"
+    "priceInfo": "일반 18,000원",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "seopjikoji",
@@ -494,7 +552,9 @@
     "descriptionShort": "섭지코지는 코지(코지곶을 의미하는 제주 방언)라는 지명에서 알 수 있듯 코의 끄트리 모양 비죽 튀어나온 지형이다.",
     "openingHours": "정보없음",
     "phone": "064-782-2810",
-    "priceInfo": "무료"
+    "priceInfo": "무료",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "seongeup-folk-village",
@@ -509,7 +569,9 @@
     "descriptionShort": "표선리에서 북쪽으로 8㎞쯤 가면 한라산 기슭 아래 성읍마을이 있다. ",
     "openingHours": "정보없음",
     "phone": "064-710-6797",
-    "priceInfo": "무료"
+    "priceInfo": "무료",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "osulloc-tea-museum",
@@ -526,7 +588,9 @@
     "descriptionShort": "제주특별자치도 서귀포시 안덕면 서광리에 있는 사립 박물관.",
     "openingHours": "09:00-18:00",
     "phone": "0507-1418-5312",
-    "priceInfo": "품목별 상이"
+    "priceInfo": "품목별 상이",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "cheonjiyeon-falls",
@@ -542,7 +606,9 @@
     "descriptionShort": "서귀포시 서귀3리 서북쪽에 그 이름 높은 천지연폭포(天池淵瀑布)가 있다. 높이가 22미터이고, 너비가 12미터인 이 폭포는 골짜기 양쪽에 울창한 숲과 기이한 바위가 절경이다.",
     "openingHours": "계절 및 현장 상황에 따라 변동",
     "phone": "064-733-1528",
-    "priceInfo": "일반 2,000원/청소년 1,000원"
+    "priceInfo": "일반 2,000원/청소년 1,000원",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "soesokkak",
@@ -559,7 +625,9 @@
     "descriptionShort": "쇠소깍은 한라산에서 서귀포시 하효동으로 흐르는 효돈천의 담수와 해수가 만나는 기수역에 위치하고 있는 하천지형이다",
     "openingHours": "계절 및 현장 상황에 따라 변동",
     "phone": "정보없음",
-    "priceInfo": "무료"
+    "priceInfo": "무료",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "snoopy-garden",
@@ -575,7 +643,9 @@
     "descriptionShort": "스누피 가든 하우스는 감정에 솔직하고 개성 있는 피너츠 친구들을 만나 그들 간의 상호 관계를 통한 공감과 위로의 메시지를 얻는 곳이다.",
     "openingHours": "계절 및 현장 상황에 따라 변동",
     "phone": "064-805-1118",
-    "priceInfo": "성인 19,000원/청소년 16,000원"
+    "priceInfo": "성인 19,000원/청소년 16,000원",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "shinhwa-theme-park",
@@ -591,7 +661,9 @@
     "descriptionShort": "대형 놀이기구와 테마존이 마련된 제주 대표 가족형 테마파크입니다.",
     "openingHours": "10:00-20:00",
     "phone": "1670-1188",
-    "priceInfo": "품목별 상이"
+    "priceInfo": "품목별 상이",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "aquaplanet-jeju",
@@ -607,7 +679,9 @@
     "descriptionShort": "대형 수조와 다양한 해양생물을 만날 수 있는 제주 최대 규모 아쿠아리움입니다.",
     "openingHours": "09:30-18:00",
     "phone": "1833-7001",
-    "priceInfo": "입장권 44,600원"
+    "priceInfo": "입장권 44,600원",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "ecoland-theme-park",
@@ -623,7 +697,9 @@
     "descriptionShort": "기차를 타고 숲과 호수를 둘러보는 자연 친화형 체험 테마파크입니다",
     "openingHours": "08:30-17:30",
     "phone": "064-802-8000",
-    "priceInfo": "성인 19,000원/청소년 16,000원"
+    "priceInfo": "성인 19,000원/청소년 16,000원",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "yongmeori-coast",
@@ -639,7 +715,9 @@
     "descriptionShort": "화산이 쌓고 파도가 깎은 제주 사계리 용머리 해안",
     "openingHours": "계절 및 현장 상황에 따라 변동",
     "phone": "064-760-6321",
-    "priceInfo": "성인 2,000원/청소년 1,000원"
+    "priceInfo": "성인 2,000원/청소년 1,000원",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "jungmun-saekdal-beach",
@@ -657,7 +735,9 @@
     "descriptionShort": "중문색달해수욕장은 아름다운 해안 풍경과 야자수의 이국적인 모습을 가진 해변으로 중문관광단지에서 시작해 천제연폭포와 대포주상절리와 이어지는 곳에 있다.",
     "openingHours": "정보없음",
     "phone": "064-739-4993",
-    "priceInfo": "무료"
+    "priceInfo": "무료",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "jongdal-ri-beach",
@@ -673,7 +753,9 @@
     "descriptionShort": "맑고 잔잔한 바다와 드라이브 코스로 유명한 제주 동부의 해변입니다.",
     "openingHours": "정보없음",
     "phone": "064-728-7711",
-    "priceInfo": "무료"
+    "priceInfo": "무료",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "figure-museum-jeju",
@@ -689,7 +771,9 @@
     "descriptionShort": "다양한 피규어와 캐릭터 전시를 감상할 수 있는 체험형 박물관입니다.",
     "openingHours": "09:30-18:00",
     "phone": "0507-1433-2264",
-    "priceInfo": "성인 14,000원/청소년 12,000원"
+    "priceInfo": "성인 14,000원/청소년 12,000원",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "hallasan-national-park",
@@ -707,7 +791,9 @@
     "descriptionShort": "다양한 등산 코스와 자연생태를 즐길 수 있는 제주 최고의 산악 관광지입니다.",
     "openingHours": "계절 및 현장 상황에 따라 변동",
     "phone": "정보없음",
-    "priceInfo": "무료"
+    "priceInfo": "무료",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "hallim-park",
@@ -724,7 +810,9 @@
     "descriptionShort": "아열대 식물원과 동굴, 정원이 어우러진 제주 대표 정원형 관광지입니다.",
     "openingHours": "09:00-17:30",
     "phone": "064-796-0001",
-    "priceInfo": "일반 15,000원/청소년 10,000원"
+    "priceInfo": "일반 15,000원/청소년 10,000원",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "hamdeok-beach",
@@ -742,7 +830,9 @@
     "descriptionShort": "푸른 잉크 속으로 풍덩 고운 백사장과 얕은 바다 속 패사층이 만들어내는 푸른빛 바다가 아름다운 해수욕장이다.",
     "openingHours": "정보없음",
     "phone": "064-728-3989",
-    "priceInfo": "무료"
+    "priceInfo": "무료",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "hueree-nature-park",
@@ -759,7 +849,9 @@
     "descriptionShort": "휴애리는 수많은 꽃들과 한라산 풍경이 더해져 더욱 아름다움을 자랑하는 꽃 정원이다. ",
     "openingHours": "09:00-18:00",
     "phone": "064-732-2114",
-    "priceInfo": "성인 13,000원/청소년 11,000원"
+    "priceInfo": "성인 13,000원/청소년 11,000원",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "Grand Josun Jeju",
@@ -777,7 +869,9 @@
     "descriptionShort": "2021년 오픈, 키즈테마 객실과 사계절 온수풀 등이 마련되어 있는 가족 친화적인 호텔",
     "openingHours": "체크인 15:00체크아웃 11:00",
     "phone": "064-738-6600",
-    "priceInfo": "5성급"
+    "priceInfo": "5성급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "Grand Hyatt Jeju",
@@ -795,7 +889,9 @@
     "descriptionShort": "고급 쇼핑몰과 수영장, 다국적 다이닝을 겸비한 제주시 중심의 호텔",
     "openingHours": "체크인 15:00체크아웃 11:00",
     "phone": "064-907-1234",
-    "priceInfo": "5성급"
+    "priceInfo": "5성급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "The Shilla Jeju",
@@ -813,7 +909,9 @@
     "descriptionShort": "글램핑 시설과 허니문형 스위트를 완비한 중문관광단지 내 호텔",
     "openingHours": "체크인 15:00체크아웃 11:00",
     "phone": "064-735-5114",
-    "priceInfo": "5성급"
+    "priceInfo": "5성급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "Maison Glad Jeju",
@@ -830,7 +928,9 @@
     "descriptionShort": "야외 정원 등이 마련된 제주 도심에 위치한 40년 전통의 호텔",
     "openingHours": "체크인 15:00체크아웃 11:00",
     "phone": "064-747-5000",
-    "priceInfo": "5성급"
+    "priceInfo": "5성급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "Parnas Hotel Jeju",
@@ -847,7 +947,9 @@
     "descriptionShort": "브랜드 어메니티 및 침대를 완비하고 오션뷰 다이닝을 갖춘 2022년 신상 호텔",
     "openingHours": "체크인 15:00체크아웃 11:00",
     "phone": "064-801-5555",
-    "priceInfo": "5성급"
+    "priceInfo": "5성급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "Lotte Hotel Jeju",
@@ -864,7 +966,9 @@
     "descriptionShort": "올데이 다이닝, 피트니스 시설, 야외 수영장 등을 모두 갖춘 중문관광단지의 고급 체인 호텔",
     "openingHours": "체크인 15:00체크아웃 11:00",
     "phone": "064-731-1000",
-    "priceInfo": "5성급"
+    "priceInfo": "5성급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "Landing Jeju Shinhwa World Hotel",
@@ -881,7 +985,9 @@
     "descriptionShort": "다양한 F&B시설과 휴식공간을 갖춘 제주 신화월드 내의 원스탑 힐링 숙소",
     "openingHours": "체크인 15:00체크아웃 11:00",
     "phone": "1670-8800",
-    "priceInfo": "5성급"
+    "priceInfo": "5성급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "Shilla Stay Jeju Airport",
@@ -898,7 +1004,9 @@
     "descriptionShort": "제주공항과 인접하며 미팅룸 등의 비즈니스 시설을 완비한 제주 시내의 호텔",
     "openingHours": "체크인 15:00체크아웃 11:00",
     "phone": "064-717-9000",
-    "priceInfo": "4성급"
+    "priceInfo": "4성급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "Shilla Stay Plus IhoTewoo Ocean Front",
@@ -915,7 +1023,9 @@
     "descriptionShort": "제주 국제공항에서 차로 약 20분 거리, 호텔신라의 업스케일 브랜드 '신라스테이'의 레저형 호텔",
     "openingHours": "체크인 15:00체크아웃 11:00",
     "phone": "064-740-9000",
-    "priceInfo": "4성급"
+    "priceInfo": "4성급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "Ecoland Hotel",
@@ -931,7 +1041,9 @@
     "descriptionShort": "에코랜드 테마파크와 맞닿아 있으며 숲과 호수 전망을 갖춘 유러피안 스타일의 호텔",
     "openingHours": "체크인 15:00체크아웃 11:00",
     "phone": "064-801-6001",
-    "priceInfo": "5성급"
+    "priceInfo": "5성급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "Hotel Whistlelark Jeju",
@@ -948,7 +1060,9 @@
     "descriptionShort": "제주 시에서 바다를 볼 수 있는 객실과 야외수영장을 보유한 호텔",
     "openingHours": "체크인 15:00체크아웃 11:00",
     "phone": "064-795-7000",
-    "priceInfo": "4급"
+    "priceInfo": "4급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "Haevichi Hotel & Resort Jeju",
@@ -966,7 +1080,9 @@
     "descriptionShort": "제주 표선 앞바다의 일출을 바라보며 쉬어갈 수 있는 고급 숙소",
     "openingHours": "체크인 15:00체크아웃 11:00",
     "phone": "064-780-8100",
-    "priceInfo": "5성급"
+    "priceInfo": "5성급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "LOTTE City Hotel Jeju",
@@ -981,7 +1097,9 @@
     "descriptionShort": "탁 트인 전망을 자랑하는 루프탑 야외 수영장이 인상적인 고급 호텔",
     "openingHours": "체크인 15:00체크아웃 11:00",
     "phone": "064-730-1000",
-    "priceInfo": "4성급"
+    "priceInfo": "4성급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "Kensington Resort Seogwipo",
@@ -996,7 +1114,9 @@
     "descriptionShort": "자연과 어우러진 멋진 야외 수영장과 깔끔한 시설, 올레길 중 가장 유명한 7코스가 지나가는 스폿으로 유명한 리조트",
     "openingHours": "체크인 15:00체크아웃 11:00",
     "phone": "064-739-9001",
-    "priceInfo": "4급"
+    "priceInfo": "4급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "Seogwipo Neulbada Pet Pension",
@@ -1012,7 +1132,9 @@
     "descriptionShort": null,
     "openingHours": "체크인 15:00체크아웃 11:00",
     "phone": null,
-    "priceInfo": "3급"
+    "priceInfo": "3급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "Donnaeko Pension",
@@ -1028,7 +1150,9 @@
     "descriptionShort": null,
     "openingHours": "체크인 15:00 체크아웃 11:00",
     "phone": null,
-    "priceInfo": "3급"
+    "priceInfo": "3급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "Infinity Resort In Jeju",
@@ -1045,7 +1169,9 @@
     "descriptionShort": null,
     "openingHours": "체크인 16:00체크아웃 11:00",
     "phone": "064-782-8888",
-    "priceInfo": "5급"
+    "priceInfo": "5급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "Seaside Arden",
@@ -1062,7 +1188,9 @@
     "descriptionShort": "중문 관광 단지 내 있어 테디베어 뮤지엄 및 중문 색달 해수욕장과 가까운 리조트",
     "openingHours": "체크인 15:00체크아웃 11:00",
     "phone": "064-731-9888",
-    "priceInfo": "4급"
+    "priceInfo": "4급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "Jeju Eco Suites",
@@ -1078,7 +1206,9 @@
     "descriptionShort": null,
     "openingHours": "체크인 15:00체크아웃 11:00",
     "phone": "064-738-9975",
-    "priceInfo": "3급"
+    "priceInfo": "3급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "Ocean Brick Poolvilla",
@@ -1096,7 +1226,9 @@
     "descriptionShort": null,
     "openingHours": "체크인 15:00 체크아웃 11:00",
     "phone": null,
-    "priceInfo": "3급"
+    "priceInfo": "3급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "Jeju Chrismas Resort",
@@ -1112,7 +1244,9 @@
     "descriptionShort": null,
     "openingHours": "체크인 15:00 체크아웃 10:00",
     "phone": "064-784-1224",
-    "priceInfo": "3급"
+    "priceInfo": "3급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "Jeju stay eden Dokche poolvila Pension",
@@ -1130,7 +1264,9 @@
     "descriptionShort": null,
     "openingHours": "체크인 16:00체크아웃 11:00",
     "phone": null,
-    "priceInfo": "3급"
+    "priceInfo": "3급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "Hidden Cliff Hotel and Nature",
@@ -1148,7 +1284,9 @@
     "descriptionShort": "사계절 이용이 가능한 온수 인피니티풀이 유명한 중문관광단지 부근의 호텔",
     "openingHours": "체크인 15:00체크아웃 11:00",
     "phone": "064-752-7777",
-    "priceInfo": "5성급"
+    "priceInfo": "5성급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "Dyne Oceano Hotel",
@@ -1165,7 +1303,9 @@
     "descriptionShort": "애월 바다 전망의 라운지를 갖춘 제주시 4성급 호텔",
     "openingHours": "체크인 15:00 체크아웃 11:00",
     "phone": "1811-0012",
-    "priceInfo": "4성급"
+    "priceInfo": "4성급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": "Hanwha Resort Jeju",
@@ -1181,7 +1321,9 @@
     "descriptionShort": "플라자CC 골프장과 테라피 센터 등을 갖춘 제주에서 힐링하기 좋은 리조트",
     "openingHours": "체크인 15:00체크아웃 11:00",
     "phone": "064-725-9000",
-    "priceInfo": "3급"
+    "priceInfo": "3급",
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1193,7 +1335,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1205,7 +1349,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1217,7 +1363,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1229,7 +1377,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1241,7 +1391,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1253,7 +1405,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1265,7 +1419,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1277,7 +1433,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1289,7 +1447,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1301,7 +1461,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1313,7 +1475,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1325,7 +1489,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1337,7 +1503,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1349,7 +1517,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1361,7 +1531,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1373,7 +1545,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1385,7 +1559,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1397,7 +1573,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1409,7 +1587,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1421,7 +1601,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1433,7 +1615,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1445,7 +1629,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1457,7 +1643,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1469,7 +1657,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1481,7 +1671,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1493,7 +1685,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1505,7 +1699,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1517,7 +1713,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1529,7 +1727,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1541,7 +1741,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1553,7 +1755,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1565,7 +1769,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1577,7 +1783,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1589,7 +1797,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1601,7 +1811,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1613,7 +1825,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1625,7 +1839,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1637,7 +1853,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1649,7 +1867,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1661,7 +1881,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1673,7 +1895,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1685,7 +1909,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1697,7 +1923,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1709,7 +1937,9 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   },
   {
     "id": null,
@@ -1721,6 +1951,8 @@
     "descriptionShort": null,
     "openingHours": null,
     "phone": null,
-    "priceInfo": null
+    "priceInfo": null,
+    "lat": null,
+    "lng": null
   }
 ]
