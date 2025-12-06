@@ -14,6 +14,7 @@ type UserProfile = {
   photoURL?: string;
   phone?: string;
   lastTravelAt?: Timestamp | null;
+  bio?: string; // 한 줄 소개
 };
 
 type Tab = "manage" | "settings";
@@ -33,6 +34,7 @@ export default function MyPage() {
   const [editNickname, setEditNickname] = useState("");
   const [editPhotoURL, setEditPhotoURL] = useState("");
   const [editPhone, setEditPhone] = useState("");
+  const [editBio, setEditBio] = useState("");
 
   // 1) Firestore에서 내 프로필 가져오기
   useEffect(() => {
@@ -53,6 +55,7 @@ export default function MyPage() {
             photoURL: user.photoURL || "",
             phone: "",
             lastTravelAt: null,
+            bio: "",
           };
           await setDoc(refDoc, newProfile);
           setProfile(newProfile);
@@ -68,7 +71,7 @@ export default function MyPage() {
     loadProfile();
   }, [user]);
 
-  // 2) 훅 호출 뒤에 로그인 여부 체크
+  // 2) 로그인 안 했으면 로그인 페이지로
   if (!user) {
     return <Navigate to="/login" replace />;
   }
@@ -79,15 +82,16 @@ export default function MyPage() {
   };
 
   const openEdit = () => {
-    // 프로필이 아직 없으면 user 정보를 기본값으로 사용
     const baseNickname =
       profile?.nickname || user.displayName || "제주 여행자";
     const basePhoto = profile?.photoURL || user.photoURL || "";
     const basePhone = profile?.phone || "";
+    const baseBio = profile?.bio || "";
 
     setEditNickname(baseNickname);
     setEditPhotoURL(basePhoto);
     setEditPhone(basePhone);
+    setEditBio(baseBio);
     setEditing(true);
   };
 
@@ -103,13 +107,9 @@ export default function MyPage() {
         `profileImages/${user.uid}/${Date.now()}_${file.name}`
       );
 
-      // Storage에 업로드
       await uploadBytes(fileRef, file);
-
-      // 다운로드 URL 가져오기
       const url = await getDownloadURL(fileRef);
 
-      // 입력창 + 화면에 바로 반영
       setEditPhotoURL(url);
       setProfile((prev) =>
         prev ? { ...prev, photoURL: url } : prev
@@ -122,36 +122,41 @@ export default function MyPage() {
 
   const saveProfile = async () => {
     if (!user) return;
-
+  
     const refDoc = doc(db, "users", user.uid);
-
-    const current: UserProfile =
-      profile || {
-        nickname: editNickname || user.displayName || "제주 여행자",
-        photoURL: editPhotoURL || user.photoURL || "",
-        phone: editPhone || "",
-        lastTravelAt: null,
-      };
-
+  
     const next: UserProfile = {
-      ...current,
       nickname: editNickname,
       photoURL: editPhotoURL || "",
       phone: editPhone || "",
+      bio: editBio || "",
+      lastTravelAt: profile?.lastTravelAt ?? null,
     };
-
-    // Firebase Auth 프로필 업데이트
-    await updateProfile(user, {
-      displayName: editNickname,
-      photoURL: editPhotoURL || undefined,
-    });
-
-    // Firestore 프로필 업데이트 (문서가 없으면 생성, 있으면 병합)
-    await setDoc(refDoc, next, { merge: true });
-
+  
+    // 1️⃣ 일단 화면부터 바로 업데이트 (버튼이 깡통처럼 안 느껴지게)
     setProfile(next);
     setEditing(false);
+  
+    // 2️⃣ Firebase Auth 프로필 업데이트 (실패해도 계속 진행)
+    try {
+      await updateProfile(user, {
+        displayName: editNickname,
+        photoURL: editPhotoURL || undefined,
+      });
+    } catch (err) {
+      console.error("Auth 프로필 업데이트 실패 (무시하고 계속 진행):", err);
+    }
+  
+    // 3️⃣ Firestore 저장 (여기서 실패해도 화면은 이미 반영됨)
+    try {
+      await setDoc(refDoc, next, { merge: true });
+    } catch (err) {
+      console.error("Firestore 프로필 저장 실패:", err);
+      alert("프로필이 화면에는 반영됐지만, 서버 저장은 실패했어요. 잠시 후 다시 시도해 주세요.");
+    }
   };
+  
+  
 
   const lastTravelText =
     profile?.lastTravelAt
@@ -161,6 +166,10 @@ export default function MyPage() {
   const name = profile?.nickname || user.displayName || "제주 여행자";
   const email = user.email || "example@example.com";
   const phone = profile?.phone || "전화번호를 입력해주세요";
+  const bio =
+    profile?.bio && profile.bio.trim()
+      ? profile.bio
+      : "소개글을 입력해주세요";
 
   return (
     <div
@@ -198,12 +207,25 @@ export default function MyPage() {
           <div className="space-y-2 text-sm text-gray-700 mt-2">
             <div>📞 {phone}</div>
             <div>📅 마지막 여행일: {lastTravelText}</div>
-            <div>📍 자주가는 지역: 제주도</div>
+            <div>
+              ✏️ 한 줄 소개:
+              <br />
+              <span className="text-gray-600">{bio}</span>
+            </div>
           </div>
 
           {profileStatus === "loading" && (
-            <div className="text-xs text-gray-400">프로필 불러오는 중…</div>
-          )}
+  <div className="text-xs text-gray-400">
+    프로필 불러오는 중…
+  </div>
+)}
+{/* 프로필이 아예 없고, 로딩도 끝났고, 에러일 때만 문구 표시 */}
+{profileStatus === "error" && !profile && (
+  <div className="text-xs text-red-500">
+    프로필 정보를 불러오지 못했습니다.
+  </div>
+)}
+
 
           <button
             className="mt-3 w-full rounded-xl border py-2 text-sm hover:bg-gray-50"
@@ -246,7 +268,6 @@ export default function MyPage() {
             </button>
           </div>
 
-          {/* 오른쪽 내용 */}
           {tab === "manage" ? <MyTripsSection /> : <SettingsSection />}
         </section>
       </div>
@@ -265,6 +286,18 @@ export default function MyPage() {
                   className="mt-1 w-full rounded-xl border px-3 py-2 text-sm"
                   value={editNickname}
                   onChange={(e) => setEditNickname(e.target.value)}
+                />
+              </label>
+
+              {/* 소개글 */}
+              <label className="block">
+                <span className="text-gray-700">한 줄 소개</span>
+                <textarea
+                  className="mt-1 w-full rounded-xl border px-3 py-2 text-sm"
+                  rows={3}
+                  value={editBio}
+                  onChange={(e) => setEditBio(e.target.value)}
+                  placeholder="예: 제주여행을 좋아하는 제주도민입니다"
                 />
               </label>
 
@@ -287,11 +320,6 @@ export default function MyPage() {
                     />
                     파일 선택
                   </label>
-                  {editPhotoURL && (
-                    <span className="text-[11px] text-gray-400">
-                      선택된 이미지는 위 URL에 자동 반영돼요
-                    </span>
-                  )}
                 </div>
               </label>
 
@@ -328,7 +356,9 @@ export default function MyPage() {
   );
 }
 
-/* ---- 아래: 내 여행 관리 탭에서 찜 목록 보여주기 ---- */
+/* ------------------------------
+   내 여행 관리 (찜 목록)
+------------------------------- */
 
 function MyTripsSection() {
   const { favorites } = useFavorites();
@@ -348,47 +378,36 @@ function MyTripsSection() {
         <div className="rounded-2xl border bg-gray-50 p-4 text-sm text-gray-600">
           아직 찜한 관광지, 숙소, 식당이 없어요.
           <br />
-          목록이나 상세 페이지에서 ♥ 버튼을 눌러 찜해보세요!
+          리스트나 상세 페이지에서 ♥ 버튼을 눌러 찜해보세요!
         </div>
       )}
 
-      {hasAny && (
-        <div className="space-y-5">
-          {attractions.length > 0 && (
-            <FavoriteSection
-              title="관광지"
-              items={attractions}
-            />
-          )}
-          {stays.length > 0 && (
-            <FavoriteSection
-              title="숙소"
-              items={stays}
-            />
-          )}
-          {foods.length > 0 && (
-            <FavoriteSection
-              title="식당"
-              items={foods}
-            />
-          )}
-        </div>
+      {attractions.length > 0 && (
+        <FavoriteSection title="관광지" items={attractions} />
+      )}
+      {stays.length > 0 && (
+        <FavoriteSection title="숙소" items={stays} />
+      )}
+      {foods.length > 0 && (
+        <FavoriteSection title="식당" items={foods} />
       )}
     </div>
   );
 }
 
-type FavoriteItemProps = {
-  title: string;
-  items: {
-    id: string;
-    name: string;
-    category: string;
-    thumbnailUrl: string | null;
-  }[];
+type FavoriteItem = {
+  id: string;
+  name: string;
+  category: string;
+  thumbnailUrl: string | null;
 };
 
-function FavoriteSection({ title, items }: FavoriteItemProps) {
+interface FavoriteSectionProps {
+  title: string;
+  items: FavoriteItem[];
+}
+
+function FavoriteSection({ title, items }: FavoriteSectionProps) {
   return (
     <section className="space-y-3">
       <h3 className="font-semibold text-sm">{title}</h3>
@@ -425,7 +444,9 @@ function FavoriteSection({ title, items }: FavoriteItemProps) {
   );
 }
 
-/* ---- 기존 설정 탭 & 토글 컴포넌트 ---- */
+/* ------------------------------
+   설정 탭
+------------------------------- */
 
 function SettingsSection() {
   return (
