@@ -1,6 +1,7 @@
 // src/pages/Detail.tsx
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useFavorites } from "../hooks/useFavorites";
 
 interface Spot {
   id: string | null;
@@ -12,7 +13,7 @@ interface Spot {
   descriptionShort: string | null;
   openingHours: string | null;
   phone: string | null;
-  priceInfo: string | null; // 관광지 요금 / 숙소 등급 / 음식점 부가 정보 등
+  priceInfo: string | null;
 }
 
 export default function Detail() {
@@ -20,16 +21,16 @@ export default function Detail() {
   const [spot, setSpot] = useState<Spot | null>(null);
   const [loading, setLoading] = useState(true);
 
+  const { isFavorite, toggleFavorite } = useFavorites();
+
   useEffect(() => {
     const load = async () => {
       try {
         const res = await fetch("/data/jeju_spots.json");
         const data: Spot[] = await res.json();
 
-        // ✅ List.tsx와 동일하게 thumbnailUrl 자동 생성
         const withThumbs = data.map((s) => {
           if (s.thumbnailUrl) return s;
-
           const imgPath = s.name ? `/spotimage/${s.name}.jpg` : null;
           return {
             ...s,
@@ -68,7 +69,19 @@ export default function Detail() {
     );
   }
 
-  // 🔎 카테고리별 아이콘 + 기본 문구
+  const fav = isFavorite(spot.id);
+
+  const handleToggleFavorite = () => {
+    if (!spot.id) return;
+    toggleFavorite({
+      id: String(spot.id),
+      name: spot.name,
+      category: spot.category,
+      thumbnailUrl: spot.thumbnailUrl,
+    });
+  };
+
+  // 카테고리별 추가 정보 (이전 버전 유지)
   const renderExtraInfo = () => {
     if (spot.category === "stay") {
       return (
@@ -80,7 +93,6 @@ export default function Detail() {
     }
 
     if (spot.category === "food") {
-      // 예: "주차 가능 / 예약 가능 / 단체 가능 / 무선 인터넷 / 남녀 화장실 구분"
       return (
         <>
           <span className="mr-1">🍽</span>
@@ -89,7 +101,6 @@ export default function Detail() {
       );
     }
 
-    // 기본: 관광지, 기타
     return (
       <>
         <span className="mr-1">💰</span>
@@ -100,7 +111,7 @@ export default function Detail() {
 
   return (
     <div className="max-w-screen-2xl mx-auto px-4 py-8 space-y-8">
-      {/* 상단 이미지 – 크기 제한 + 중앙 정렬 */}
+      {/* 상단 이미지 */}
       <div className="w-full flex justify-center">
         <div className="w-full max-w-4xl bg-gray-100 rounded-2xl overflow-hidden flex items-center justify-center">
           {spot.thumbnailUrl ? (
@@ -115,9 +126,24 @@ export default function Detail() {
         </div>
       </div>
 
-      {/* 기본 정보 */}
+      {/* 기본 정보 + 찜 버튼 */}
       <section className="space-y-3">
-        <h1 className="text-2xl font-bold">{spot.name}</h1>
+        <div className="flex items-center justify-between gap-4">
+          <h1 className="text-2xl font-bold">{spot.name}</h1>
+
+          <button
+            type="button"
+            onClick={handleToggleFavorite}
+            className={`px-3 py-1.5 rounded-full text-sm flex items-center gap-2 shadow-sm ${
+              fav
+                ? "bg-red-500 text-white"
+                : "bg-white border text-gray-600"
+            }`}
+          >
+            <span>{fav ? "♥" : "♡"}</span>
+            <span>{fav ? "찜 해제" : "찜하기"}</span>
+          </button>
+        </div>
 
         {/* 태그 */}
         {spot.tags?.length > 0 && (
@@ -162,7 +188,6 @@ export default function Detail() {
               <span>{spot.phone || "연락처 정보 없음"}</span>
             </div>
 
-            {/* 💰 / ⭐ / 🍽 카테고리별로 다르게 표시 */}
             <div>{renderExtraInfo()}</div>
           </div>
         </div>
