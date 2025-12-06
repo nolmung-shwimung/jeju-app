@@ -73,17 +73,19 @@ export default function Detail() {
 
   return (
     <div className="max-w-screen-2xl mx-auto px-4 py-8 space-y-8">
-      {/* 상단 큰 이미지 */}
-      <div className="w-full aspect-[16/9] bg-gray-100 rounded-2xl overflow-hidden flex items-center justify-center">
-        {spot.thumbnailUrl ? (
-          <img
-            src={spot.thumbnailUrl}
-            alt={spot.name}
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          <span className="text-gray-400">사진 공간</span>
-        )}
+      {/* 상단 이미지 – 크기 제한 + 중앙 정렬 */}
+      <div className="w-full flex justify-center">
+        <div className="w-full max-w-4xl bg-gray-100 rounded-2xl overflow-hidden flex items-center justify-center">
+          {spot.thumbnailUrl ? (
+            <img
+              src={spot.thumbnailUrl}
+              alt={spot.name}
+              className="w-full max-h-[420px] object-cover"
+            />
+          ) : (
+            <span className="text-gray-400 py-16">사진 공간</span>
+          )}
+        </div>
       </div>
 
       {/* 기본 정보 */}
@@ -104,7 +106,7 @@ export default function Detail() {
           </div>
         )}
 
-        {/* ✅ 한 줄 소개 / 설명 */}
+        {/* 한 줄 소개 / 설명 */}
         {spot.descriptionShort && (
           <p className="text-sm text-gray-700 leading-relaxed mt-2">
             {spot.descriptionShort}
