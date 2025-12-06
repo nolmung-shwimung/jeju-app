@@ -1,12 +1,13 @@
 // src/pages/MyPage.tsx
 import { useEffect, useState, type ChangeEvent } from "react";
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate, Navigate, Link } from "react-router-dom";
 import { doc, getDoc, setDoc, Timestamp } from "firebase/firestore";
 import { updateProfile } from "firebase/auth";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, storage } from "../firebase";
 import { useAuth } from "../contexts/AuthContext";
 import jejuBg from "../assets/images/제주도 배경.jpg";
+import { useFavorites } from "../hooks/useFavorites";
 
 type UserProfile = {
   nickname: string;
@@ -245,7 +246,7 @@ export default function MyPage() {
             </button>
           </div>
 
-          {/* 오른쪽 내용은 프로필 로딩 여부와 상관없이 그대로 표시 */}
+          {/* 오른쪽 내용 */}
           {tab === "manage" ? <MyTripsSection /> : <SettingsSection />}
         </section>
       </div>
@@ -327,47 +328,104 @@ export default function MyPage() {
   );
 }
 
-/* ---- 아래 부분은 기존 그대로 사용 ---- */
+/* ---- 아래: 내 여행 관리 탭에서 찜 목록 보여주기 ---- */
 
 function MyTripsSection() {
+  const { favorites } = useFavorites();
+
+  const attractions = favorites.filter((f) => f.category === "attraction");
+  const stays = favorites.filter((f) => f.category === "stay");
+  const foods = favorites.filter((f) => f.category === "food");
+
+  const hasAny =
+    attractions.length > 0 || stays.length > 0 || foods.length > 0;
+
   return (
-    <div className="space-y-4">
-      <h2 className="font-semibold text-lg">저장된 여행</h2>
+    <div className="space-y-6">
+      <h2 className="font-semibold text-lg">내가 찜한 장소</h2>
 
-      <article className="rounded-2xl border bg-gray-50 p-4 flex gap-4">
-        <div className="h-20 w-28 rounded-xl bg-gray-200" />
-        <div className="flex-1">
-          <div className="font-semibold">제주 자연 일일투어</div>
-          <div className="mt-1 text-xs text-gray-500">
-            2025-02-20 · 10:00 출발 · 1일 코스
-          </div>
-          <div className="mt-2 text-xs text-gray-400">
-            총 5곳 · 이동거리 120km
-          </div>
+      {!hasAny && (
+        <div className="rounded-2xl border bg-gray-50 p-4 text-sm text-gray-600">
+          아직 찜한 관광지, 숙소, 식당이 없어요.
+          <br />
+          목록이나 상세 페이지에서 ♥ 버튼을 눌러 찜해보세요!
         </div>
-        <button className="self-center rounded-xl border px-3 py-1 text-xs hover:bg-white">
-          일정 보기
-        </button>
-      </article>
+      )}
 
-      <article className="rounded-2xl border bg-gray-50 p-4 flex gap-4">
-        <div className="h-20 w-28 rounded-xl bg-gray-200" />
-        <div className="flex-1">
-          <div className="font-semibold">제주 힐링 여행</div>
-          <div className="mt-1 text-xs text-gray-500">
-            2025-03-12 · 3박 4일
-          </div>
-          <div className="mt-2 text-xs text-gray-400">
-            총 8곳 · 이동거리 300km
-          </div>
+      {hasAny && (
+        <div className="space-y-5">
+          {attractions.length > 0 && (
+            <FavoriteSection
+              title="관광지"
+              items={attractions}
+            />
+          )}
+          {stays.length > 0 && (
+            <FavoriteSection
+              title="숙소"
+              items={stays}
+            />
+          )}
+          {foods.length > 0 && (
+            <FavoriteSection
+              title="식당"
+              items={foods}
+            />
+          )}
         </div>
-        <button className="self-center rounded-xl border px-3 py-1 text-xs hover:bg-white">
-          일정 보기
-        </button>
-      </article>
+      )}
     </div>
   );
 }
+
+type FavoriteItemProps = {
+  title: string;
+  items: {
+    id: string;
+    name: string;
+    category: string;
+    thumbnailUrl: string | null;
+  }[];
+};
+
+function FavoriteSection({ title, items }: FavoriteItemProps) {
+  return (
+    <section className="space-y-3">
+      <h3 className="font-semibold text-sm">{title}</h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {items.map((f) => (
+          <Link
+            key={f.id}
+            to={`/detail/${f.id}`}
+            className="flex gap-3 rounded-2xl border bg-gray-50 p-3 hover:bg-white hover:shadow-sm transition"
+          >
+            <div className="h-16 w-20 rounded-xl bg-gray-200 overflow-hidden flex-shrink-0">
+              {f.thumbnailUrl ? (
+                <img
+                  src={f.thumbnailUrl}
+                  alt={f.name}
+                  className="h-full w-full object-cover"
+                />
+              ) : (
+                <div className="h-full w-full grid place-items-center text-[11px] text-gray-400">
+                  이미지 없음
+                </div>
+              )}
+            </div>
+            <div className="flex-1">
+              <div className="text-sm font-medium truncate">{f.name}</div>
+              <div className="mt-1 text-[11px] text-gray-400">
+                자세히 보러가기 →
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ---- 기존 설정 탭 & 토글 컴포넌트 ---- */
 
 function SettingsSection() {
   return (
