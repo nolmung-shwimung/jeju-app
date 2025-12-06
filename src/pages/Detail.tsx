@@ -1,6 +1,7 @@
 // src/pages/Detail.tsx
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import MapView from "../components/MapView";
 
 interface Spot {
   id: string | null;
@@ -13,6 +14,8 @@ interface Spot {
   openingHours: string | null;
   phone: string | null;
   priceInfo: string | null;
+  lat: number;
+  lng: number;
 }
 
 export default function Detail() {
@@ -139,7 +142,7 @@ export default function Detail() {
 
         {/* 지도 placeholder */}
         <div className="p-4 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400">
-          지도 공간
+        <MapView lat={spot.lat} lng={spot.lng} name={spot.name} />
         </div>
       </section>
     </div>
