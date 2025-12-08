@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-let isLoaded = false;
-
-export function loadGoogleMaps(apiKey: string): Promise<void> {
-  return new Promise((resolve) => {
-    if (isLoaded) return resolve();
-=======
->>>>>>> 161166045d36211638ed5a9a384ad2bad3b8cffa
 // src/utils/loadGoogleMaps.ts
 
 let googleMapsPromise: Promise<any> | null = null;
@@ -28,22 +18,10 @@ export function loadGoogleMaps(): Promise<any> {
       reject(new Error("API 키 없음"));
       return;
     }
-<<<<<<< HEAD
-=======
->>>>>>> dbe69ae (Add Google Maps to Detail page and fix MapView)
->>>>>>> 161166045d36211638ed5a9a384ad2bad3b8cffa
 
     const script = document.createElement("script");
     script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}`;
     script.async = true;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    script.onload = () => {
-      isLoaded = true;
-      resolve();
-=======
->>>>>>> 161166045d36211638ed5a9a384ad2bad3b8cffa
     script.defer = true;
 
     script.onload = () => {
@@ -56,22 +34,10 @@ export function loadGoogleMaps(): Promise<any> {
 
     script.onerror = () => {
       reject(new Error("Google Maps 스크립트 로드 실패"));
-<<<<<<< HEAD
-=======
->>>>>>> dbe69ae (Add Google Maps to Detail page and fix MapView)
->>>>>>> 161166045d36211638ed5a9a384ad2bad3b8cffa
     };
 
     document.head.appendChild(script);
   });
-<<<<<<< HEAD
 
   return googleMapsPromise;
-=======
-<<<<<<< HEAD
-=======
-
-  return googleMapsPromise;
->>>>>>> dbe69ae (Add Google Maps to Detail page and fix MapView)
->>>>>>> 161166045d36211638ed5a9a384ad2bad3b8cffa
 }
