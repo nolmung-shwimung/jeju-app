@@ -9,7 +9,8 @@ interface Spot {
   name: string;
   category: string; // "attraction" | "stay" | "food" 등
   address: string | null;
-  tags: string[];
+  // CSV → JSON 변환 시 tags가 string 또는 null일 수도 있으니 타입을 넓혀줌
+  tags?: string[] | string | null;
   thumbnailUrl: string | null;
   descriptionShort: string | null;
   openingHours: string | null;
@@ -20,6 +21,21 @@ interface Spot {
 // 공백 제거 + 소문자 변환 → "호 텔" == "호텔"
 const normalize = (s: string | null | undefined) =>
   (s ?? "").toLowerCase().replace(/\s+/g, "");
+
+// tags가 어떤 형태든 항상 string[] 로 바꿔주는 헬퍼
+const getTagArray = (raw: Spot["tags"]): string[] => {
+  if (!raw) return [];
+  if (Array.isArray(raw)) {
+    return raw
+      .map((t) => (t ?? "").trim())
+      .filter((t) => t.length > 0);
+  }
+  // 문자열인 경우 "카페, 자연" → ["카페","자연"]
+  return String(raw)
+    .split(",")
+    .map((t) => t.trim())
+    .filter((t) => t.length > 0);
+};
 
 export default function List() {
   const [sp] = useSearchParams();
@@ -32,6 +48,7 @@ export default function List() {
 
   const selectedTags = (sp.get("tags") || "")
     .split(",")
+    .map((t) => t.trim())
     .filter(Boolean);
 
   // 검색어 (홈에서 /list?q=검색어 로 넘어옴)
@@ -81,9 +98,10 @@ export default function List() {
   const byTag: Spot[] =
     selectedTags.length === 0
       ? spotsByCat
-      : spotsByCat.filter((spot) =>
-          spot.tags?.some((t) => selectedTags.includes(t))
-        );
+      : spotsByCat.filter((spot) => {
+          const spotTags = getTagArray(spot.tags);
+          return spotTags.some((t) => selectedTags.includes(t));
+        });
 
   // 3) 검색어 필터 (이름 / 주소 / 태그 텍스트)
   const listToShow: Spot[] = !qNorm
@@ -91,7 +109,7 @@ export default function List() {
     : byTag.filter((spot) => {
         const nameMatch = normalize(spot.name).includes(qNorm);
         const addressMatch = normalize(spot.address).includes(qNorm);
-        const tagMatch = (spot.tags || []).some((tag) =>
+        const tagMatch = getTagArray(spot.tags).some((tag) =>
           normalize(tag).includes(qNorm)
         );
         return nameMatch || addressMatch || tagMatch;
@@ -134,6 +152,8 @@ export default function List() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {listToShow.map((spot) => {
             const fav = isFavorite(spot.id);
+
+            const spotTags = getTagArray(spot.tags);
 
             return (
               <Link
@@ -189,7 +209,7 @@ export default function List() {
                   </div>
 
                   <div className="mt-2 flex flex-wrap gap-1">
-                    {spot.tags.slice(0, 3).map((tag) => (
+                    {spotTags.slice(0, 3).map((tag) => (
                       <span
                         key={tag}
                         className="px-2 py-0.5 text-xs rounded-full bg-gray-100 text-gray-600"
