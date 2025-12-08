@@ -1,6 +1,8 @@
 // src/pages/Detail.tsx
+import MapView from "../components/MapView";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+<<<<<<< HEAD
 <<<<<<< HEAD
 import MapView from "../components/MapView";
 =======
@@ -10,6 +12,10 @@ import { useFavorites } from "../hooks/useFavorites";
 =======
 import MapView from "../components/MapView";
 >>>>>>> 2b0c8cc (add map)
+=======
+import { useFavorites } from "../hooks/useFavorites";
+
+>>>>>>> dbe69ae (Add Google Maps to Detail page and fix MapView)
 
 interface Spot {
   id: string | null;
