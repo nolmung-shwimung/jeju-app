@@ -66,17 +66,15 @@ export default function List() {
         const res = await fetch("/data/jeju_spots.json");
         const data: Spot[] = await res.json();
 
-        // ✅ 여기서 thumbnailUrl 자동 생성
+        // ✅ thumbnailUrl 우선순위: 로컬 이미지 > CSV에 있던 값
         const withThumbs = data.map((spot) => {
-          if (spot.thumbnailUrl) return spot;
-
-          const imgPath = spot.name
+          const localImg = spot.name
             ? `/spotimage/${spot.name}.jpg`
             : null;
 
           return {
             ...spot,
-            thumbnailUrl: imgPath,
+            thumbnailUrl: localImg || spot.thumbnailUrl || null,
           };
         });
 

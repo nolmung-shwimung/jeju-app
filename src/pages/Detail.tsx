@@ -44,12 +44,13 @@ export default function Detail() {
         const res = await fetch("/data/jeju_spots.json");
         const data: Spot[] = await res.json();
 
+        // ✅ thumbnailUrl 우선순위: 로컬 이미지 > CSV에 있던 값
         const withThumbs = data.map((s) => {
-          if (s.thumbnailUrl) return s;
-          const imgPath = s.name ? `/spotimage/${s.name}.jpg` : null;
+          const localImg = s.name ? `/spotimage/${s.name}.jpg` : null;
+
           return {
             ...s,
-            thumbnailUrl: imgPath,
+            thumbnailUrl: localImg || s.thumbnailUrl || null,
           };
         });
 
@@ -135,6 +136,10 @@ export default function Detail() {
               src={spot.thumbnailUrl}
               alt={spot.name}
               className="w-full max-h-[420px] object-cover"
+              onError={(e) => {
+                // 이미지 깨지면 숨기고 텍스트만 보이게
+                (e.currentTarget as HTMLImageElement).style.display = "none";
+              }}
             />
           ) : (
             <span className="text-gray-400 py-16">사진 공간</span>
