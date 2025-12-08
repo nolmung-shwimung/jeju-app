@@ -5,7 +5,11 @@ import { useParams } from "react-router-dom";
 import MapView from "../components/MapView";
 =======
 import { useFavorites } from "../hooks/useFavorites";
+<<<<<<< HEAD
 >>>>>>> 494a083 (장소 찜하기 기능 추가)
+=======
+import MapView from "../components/MapView";
+>>>>>>> 2b0c8cc (add map)
 
 interface Spot {
   id: string | null;
@@ -20,11 +24,16 @@ interface Spot {
   phone: string | null;
   priceInfo: string | null;
 <<<<<<< HEAD
+<<<<<<< HEAD
   lat: number;
   lng: number;
    // 관광지 요금 / 숙소 등급 / 음식점 부가 정보 등
 =======
 >>>>>>> 494a083 (장소 찜하기 기능 추가)
+=======
+  lat: number;
+  lng: number;
+>>>>>>> 2b0c8cc (add map)
 }
 
 // tags를 항상 string[]로 변환하는 헬퍼
@@ -224,12 +233,19 @@ export default function Detail() {
         </div>
 
         {/* 지도 placeholder */}
+<<<<<<< HEAD
   <div className="p-4 rounded-xl bg-gray-50">
     <div className="w-full h-64 rounded-xl overflow-hidden">
       <MapView lat={spot.lat} lng={spot.lng} name={spot.name} />
     </div>
   </div>
 </section>
+=======
+        <div className="p-4 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400">
+        <MapView lat={spot.lat} lng={spot.lng} name={spot.name} />
+        </div>
+      </section>
+>>>>>>> 2b0c8cc (add map)
     </div>
   );
 }
