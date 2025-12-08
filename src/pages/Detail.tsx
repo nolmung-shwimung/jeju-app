@@ -12,7 +12,8 @@ interface Spot {
   name: string;
   category: string; // "attraction" | "stay" | "food" 등
   address: string | null;
-  tags: string[];
+  // CSV → JSON 때문에 string / null 가능성도 있어서 타입 넓힘
+  tags?: string[] | string | null;
   thumbnailUrl: string | null;
   descriptionShort: string | null;
   openingHours: string | null;
@@ -25,6 +26,20 @@ interface Spot {
 =======
 >>>>>>> 494a083 (장소 찜하기 기능 추가)
 }
+
+// tags를 항상 string[]로 변환하는 헬퍼
+const getTagArray = (raw: Spot["tags"]): string[] => {
+  if (!raw) return [];
+  if (Array.isArray(raw)) {
+    return raw
+      .map((t) => (t ?? "").trim())
+      .filter((t) => t.length > 0);
+  }
+  return String(raw)
+    .split(",")
+    .map((t) => t.trim())
+    .filter((t) => t.length > 0);
+};
 
 export default function Detail() {
   const { id } = useParams<{ id: string }>();
@@ -80,6 +95,7 @@ export default function Detail() {
   }
 
   const fav = isFavorite(spot.id);
+  const tags = getTagArray(spot.tags);
 
   const handleToggleFavorite = () => {
     if (!spot.id) return;
@@ -156,9 +172,9 @@ export default function Detail() {
         </div>
 
         {/* 태그 */}
-        {spot.tags?.length > 0 && (
+        {tags.length > 0 && (
           <div className="flex flex-wrap gap-2">
-            {spot.tags.map((tag) => (
+            {tags.map((tag) => (
               <span
                 key={tag}
                 className="px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs"
