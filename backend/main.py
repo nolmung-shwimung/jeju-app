@@ -1,14 +1,14 @@
 # main.py
 # ================================================
-# 제주 여행 코스 추천 API (관광 + 음식 + 숙소, 타임라인)
+# 제주 여행 코스 추천 API (관광 + 음식 + 숙소)
 # + 챗봇용 /chat 엔드포인트
+# (⚠ 시간 계산/타임라인 없이 Day/순서만 제공)
 # ================================================
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Optional, Tuple, Dict
-from datetime import datetime, timedelta
 
 import pandas as pd
 import numpy as np
@@ -170,54 +170,8 @@ df["subregion"] = df.apply(classify_subregion, axis=1)
 
 
 # ------------------------------------------------
-# 3. 이동시간 매트릭스
+# 3. (이전의 이동시간 매트릭스/시간 계산은 전부 제거)
 # ------------------------------------------------
-
-SUBREGIONS = ["제주 동", "제주 서", "서귀포 동", "서귀포 서", "기타"]
-DEFAULT_TRAVEL_TIME = 1.0
-
-travel_time_matrix = {
-    "제주 동": {
-        "제주 동": 0.3,
-        "제주 서": 1.0,
-        "서귀포 동": 0.5,
-        "서귀포 서": 1.5,
-        "기타": 1.0,
-    },
-    "제주 서": {
-        "제주 동": 1.0,
-        "제주 서": 0.3,
-        "서귀포 동": 1.0,
-        "서귀포 서": 0.5,
-        "기타": 1.0,
-    },
-    "서귀포 동": {
-        "제주 동": 0.5,
-        "제주 서": 1.0,
-        "서귀포 동": 0.3,
-        "서귀포 서": 1.0,
-        "기타": 1.0,
-    },
-    "서귀포 서": {
-        "제주 동": 1.5,
-        "제주 서": 0.5,
-        "서귀포 동": 1.0,
-        "서귀포 서": 0.3,
-        "기타": 1.0,
-    },
-    "기타": {
-        "제주 동": 1.0,
-        "제주 서": 1.0,
-        "서귀포 동": 1.0,
-        "서귀포 서": 1.0,
-        "기타": 0.5,
-    },
-}
-
-
-def get_travel_time(sub1: str, sub2: str) -> float:
-    t1 = travel_time_matrix.get(sub1, {})
-    return t1.get(sub2, DEFAULT_TRAVEL_TIME)
 
 
 # ------------------------------------------------
@@ -328,7 +282,6 @@ def build_query_from_tags(selected_tags: List[str], free_text: str = "") -> Tupl
 # 4-1. 챗봇용 키워드 → 태그/지역/기간 파서
 # ------------------------------------------------
 
-# 사용자가 쓰는 단어 → 우리 시스템 태그로 매핑
 KEYWORD_TO_TAG = {
     # 동행 / 분위기
     "커플": "커플",
@@ -373,7 +326,6 @@ KEYWORD_TO_TAG = {
     "향토음식": "제주향토음식",
 }
 
-# 사용자가 말하는 큰 지역 키워드 → address 필터용 패턴 + 사람한테 보여줄 라벨
 AREA_KEYWORDS = {
     # 제주시 서쪽 (애월/한림/협재/한경/이호/도두)
     "제주 서쪽": {
@@ -425,16 +377,18 @@ AREA_KEYWORDS = {
         "label": "서귀포시 전역",
     },
 }
+
+
 def parse_chat_message(message: str):
     """
     사용자가 보낸 자연어 문장을 분석해서
     - tags: ["커플", "자연", "오션뷰", ...]
     - region_filter: 주소 필터용 정규식 패턴 (예: "애월|한림|협재")
-    - region_label: 사람이 읽을 예쁜 설명 (예: "제주시 서쪽(애월·한림·협재 일대)")
+    - region_label: 사람이 읽을 예쁜 설명
     - days: 여행 일수
     - max_places_per_day: 하루 관광지 개수
-    - start_time_str: 시작 시간
     를 추출한다.
+    (⚠ start_time_str는 더 이상 사용하지 않지만, 호환을 위해 그대로 둠)
     """
     msg = (message or "").strip()
 
@@ -446,16 +400,14 @@ def parse_chat_message(message: str):
     max_places_per_day = 3
     start_time_str = "09:00"
 
-    # 2) 일수 파싱 (2박3일 / 1박 2일 / 3일 코스 등)
+    # 2) 일수 파싱 (2박3일 / 1박2일 / 3일 코스 등)
     m = re.search(r"(\d+)\s*박\s*(\d+)\s*일", msg)
     if m:
-        # "2박3일"이면 3일
         days = int(m.group(2))
     else:
         m2 = re.search(r"(\d+)\s*일", msg)
         if m2:
             d = int(m2.group(1))
-            # 1~5일 사이로 제한
             days = max(1, min(int(d), 5))
     if "당일" in msg or "원데이" in msg:
         days = 1
@@ -472,7 +424,7 @@ def parse_chat_message(message: str):
             region_label = info["label"]
             break
 
-    # 5) 시간대 (대충만 처리)
+    # 5) 시간대 (지금은 사용 X, 값만 유지)
     if "오후" in msg or "늦게" in msg or "점심" in msg:
         start_time_str = "11:00"
     if "아침 일찍" in msg or "일출" in msg:
@@ -495,12 +447,11 @@ def parse_chat_message(message: str):
         "start_time_str": start_time_str,
     }
 
+
 # ------------------------------------------------
 # 4-2. 코스 전용 룰 기반 응답 (챗봇)
-#      - "제주 서쪽 코스", "제주동쪽코스", "2박3일 제주도 코스" 등
 # ------------------------------------------------
 
-# 프론트에서 만든 코스 일정과 동일한 느낌으로 구성
 CourseDayRB = Dict[str, object]  # {"day": int, "title": str, "items": List[dict]]
 
 COURSE_ITINERARY_RB: Dict[str, List[CourseDayRB]] = {
@@ -676,10 +627,6 @@ def _build_single_course_answer(course_key: str) -> Optional[str]:
 
 
 def _build_2n3d_answer() -> str:
-    """
-    2박 3일 기본 루트 예시:
-    1일차 서쪽 → 2일차 남쪽 → 3일차 동쪽
-    """
     order = ["west", "south", "east"]
     lines: List[str] = []
     lines.append("⛱ 2박 3일 제주도 추천 코스예요.")
@@ -703,26 +650,18 @@ def _build_2n3d_answer() -> str:
 
 
 def rule_based_course_answer(user_message: str) -> Optional[str]:
-    """
-    - '제주 서쪽 코스', '제주서쪽코스', '서쪽 일정 추천' 등
-    - '2박3일 제주도 코스', '제주 2박 3일 코스' 등
-    을 감지해서 코스 텍스트를 바로 반환.
-    """
     if not user_message:
         return None
 
     msg_no_space = user_message.replace(" ", "")
-    # 소문자 변환(영어 대비용)
     msg_no_space = msg_no_space.lower()
 
-    # 2박 3일 패턴
     if (
         ("2박3일" in msg_no_space or ("2박" in msg_no_space and "3일" in msg_no_space))
         and "코스" in msg_no_space
     ):
         return _build_2n3d_answer()
 
-    # 방향별 코스
     if "서쪽" in msg_no_space and ("코스" in msg_no_space or "일정" in msg_no_space):
         return _build_single_course_answer("west")
     if "동쪽" in msg_no_space and ("코스" in msg_no_space or "일정" in msg_no_space):
@@ -777,10 +716,6 @@ df["category"] = df.apply(classify_category, axis=1)
 vectorizer = TfidfVectorizer(token_pattern=r"(?u)\b\w+\b")
 tfidf_matrix = vectorizer.fit_transform(df["search_text"])
 
-df["stay_hours"] = df["category"].map(
-    lambda c: 12.0 if c == "stay" else (1.0 if c == "food" else 1.5)
-)
-
 
 # ------------------------------------------------
 # 7. 헬퍼 함수들 (정렬, 후보 선택)
@@ -821,7 +756,7 @@ def get_best_candidate(
 
 
 # ------------------------------------------------
-# 8. 메인 추천 로직 (mixed 버전)
+# 8. 메인 추천 로직 (시간 계산 없이 Day/순서만)
 # ------------------------------------------------
 
 def recommend_itinerary_mixed(
@@ -829,8 +764,8 @@ def recommend_itinerary_mixed(
     region_filter: Optional[str] = None,
     days: int = 1,
     max_places_per_day: int = 3,
-    start_time_str: str = "09:00",
-    daily_hours: float = 10.0,
+    start_time_str: str = "09:00",   # 더 이상 사용하지 않지만 시그니처는 유지
+    daily_hours: float = 10.0,       # (호환용, 사용 X)
     free_text: str = "",
 ) -> pd.DataFrame:
     """
@@ -838,9 +773,9 @@ def recommend_itinerary_mixed(
     2) place / food / stay 각각 랭킹
     3) place로 Day별 뼈대 (N일 × M개) 만들기
     4) 각 Day마다:
-       - 관광지 사이에 같은 사분면 food 1개 끼워 넣기
+       - 첫 place 뒤에 같은 사분면 food 1개 끼워 넣기
        - 마지막에 같은 사분면 stay 1개 붙이기
-    5) 출발 시간부터 시간 순서로 타임라인 계산
+    5) 시간 계산은 하지 않고 day / order_in_day 만 부여
     """
 
     query_text, merged_tags = build_query_from_tags(selected_tags, free_text=free_text)
@@ -881,11 +816,6 @@ def recommend_itinerary_mixed(
     total_place_needed = days * max_places_per_day
     place_df = place_df.head(total_place_needed).reset_index(drop=True)
 
-    try:
-        base_time = datetime.strptime(start_time_str, "%H:%M")
-    except Exception:
-        base_time = datetime.strptime("09:00", "%H:%M")
-
     used_indices: set = set()
     results = []
 
@@ -898,13 +828,6 @@ def recommend_itinerary_mixed(
         if day_places.empty:
             continue
 
-        day_start_time = base_time
-        current_time = base_time
-        day_end_limit = base_time + timedelta(hours=daily_hours)
-
-        prev_subregion = None
-        order_in_day = 0
-
         dominant_sub = (
             day_places["subregion"].value_counts().idxmax()
             if not day_places["subregion"].empty
@@ -914,122 +837,44 @@ def recommend_itinerary_mixed(
         day_food_candidate = get_best_candidate(
             food_df, used_indices, preferred_subregion=dominant_sub
         )
-        food_insert_after = 1
-        food_inserted = False
+        last_place_sub = day_places.iloc[-1]["subregion"]
+        day_stay_candidate = get_best_candidate(
+            stay_df, used_indices, preferred_subregion=last_place_sub
+        )
 
+        day_items = []
         for i, (_, place_row) in enumerate(day_places.iterrows()):
-            place_sub = place_row["subregion"]
-            stay_h = float(place_row["stay_hours"])
+            day_items.append(("place", place_row))
+            if i == 0 and day_food_candidate is not None:
+                day_items.append(("food", day_food_candidate))
 
-            travel_h = 0.5 if order_in_day == 0 else get_travel_time(prev_subregion, place_sub)
+        if day_stay_candidate is not None:
+            day_items.append(("stay", day_stay_candidate))
 
-            arrival_time = current_time + timedelta(hours=travel_h)
-            end_time = arrival_time + timedelta(hours=stay_h)
-
-            if end_time > day_end_limit + timedelta(hours=1):
+        order_in_day = 0
+        for cat, row in day_items:
+            if pd.isna(row.get("orig_idx", np.nan)):
+                continue
+            if row["orig_idx"] in used_indices:
                 continue
 
+            used_indices.add(row["orig_idx"])
             order_in_day += 1
-            used_indices.add(place_row["orig_idx"])
 
             results.append({
                 "day": day,
                 "order_in_day": order_in_day,
-                "name": place_row.get("name", ""),
-                "category": "place",
-                "address": place_row.get("address", ""),
-                "region_city": place_row.get("region_city", ""),
-                "subregion": place_sub,
-                "keywords": place_row.get("keywords", ""),
-                "description": place_row.get("description", ""),
-                "similarity": float(place_row.get("similarity", 0.0)),
-                "lat": place_row.get("lat"),
-                "lng": place_row.get("lng"),
-                "visit_start": arrival_time.strftime("%H:%M"),
-                "visit_end": end_time.strftime("%H:%M"),
-                "travel_hours": travel_h,
-                "stay_hours": stay_h,
+                "name": row.get("name", ""),
+                "category": cat,  # place / food / stay
+                "address": row.get("address", ""),
+                "region_city": row.get("region_city", ""),
+                "subregion": row.get("subregion", ""),
+                "keywords": row.get("keywords", ""),
+                "description": row.get("description", ""),
+                "similarity": float(row.get("similarity", 0.0)),
+                "lat": row.get("lat"),
+                "lng": row.get("lng"),
             })
-
-            current_time = end_time
-            prev_subregion = place_sub
-
-            # 음식 끼워넣기
-            if (not food_inserted) and day_food_candidate is not None and (i + 1 == food_insert_after):
-                food_sub = day_food_candidate["subregion"]
-                food_stay_h = float(day_food_candidate["stay_hours"])
-                travel_h_food = get_travel_time(prev_subregion, food_sub)
-
-                arrive_food = current_time + timedelta(hours=travel_h_food)
-                end_food = arrive_food + timedelta(hours=food_stay_h)
-
-                if end_food <= day_end_limit + timedelta(hours=1):
-                    order_in_day += 1
-                    used_indices.add(day_food_candidate["orig_idx"])
-
-                    results.append({
-                        "day": day,
-                        "order_in_day": order_in_day,
-                        "name": day_food_candidate.get("name", ""),
-                        "category": "food",
-                        "address": day_food_candidate.get("address", ""),
-                        "region_city": day_food_candidate.get("region_city", ""),
-                        "subregion": food_sub,
-                        "keywords": day_food_candidate.get("keywords", ""),
-                        "description": day_food_candidate.get("description", ""),
-                        "similarity": float(day_food_candidate.get("similarity", 0.0)),
-                        "lat": day_food_candidate.get("lat"),
-                        "lng": day_food_candidate.get("lng"),
-                        "visit_start": arrive_food.strftime("%H:%M"),
-                        "visit_end": end_food.strftime("%H:%M"),
-                        "travel_hours": travel_h_food,
-                        "stay_hours": food_stay_h,
-                    })
-
-                    current_time = end_food
-                    prev_subregion = food_sub
-                    food_inserted = True
-
-        # 숙소
-        if prev_subregion is not None:
-            day_stay_candidate = get_best_candidate(
-                stay_df, used_indices, preferred_subregion=prev_subregion
-            )
-        else:
-            day_stay_candidate = get_best_candidate(
-                stay_df, used_indices, preferred_subregion=None
-            )
-
-        if day_stay_candidate is not None and prev_subregion is not None:
-            stay_sub = day_stay_candidate["subregion"]
-            stay_h = float(day_stay_candidate["stay_hours"])
-            travel_h_stay = get_travel_time(prev_subregion, stay_sub)
-
-            arrive_stay = current_time + timedelta(hours=travel_h_stay)
-            end_stay = arrive_stay + timedelta(hours=stay_h)
-
-            if end_stay <= day_end_limit + timedelta(hours=2):
-                order_in_day += 1
-                used_indices.add(day_stay_candidate["orig_idx"])
-
-                results.append({
-                    "day": day,
-                    "order_in_day": order_in_day,
-                    "name": day_stay_candidate.get("name", ""),
-                    "category": "stay",
-                    "address": day_stay_candidate.get("address", ""),
-                    "region_city": day_stay_candidate.get("region_city", ""),
-                    "subregion": stay_sub,
-                    "keywords": day_stay_candidate.get("keywords", ""),
-                    "description": day_stay_candidate.get("description", ""),
-                    "similarity": float(day_stay_candidate.get("similarity", 0.0)),
-                    "lat": day_stay_candidate.get("lat"),
-                    "lng": day_stay_candidate.get("lng"),
-                    "visit_start": arrive_stay.strftime("%H:%M"),
-                    "visit_end": end_stay.strftime("%H:%M"),
-                    "travel_hours": travel_h_stay,
-                    "stay_hours": stay_h,
-                })
 
     if not results:
         return pd.DataFrame()
@@ -1042,13 +887,13 @@ def recommend_itinerary_mixed(
 # ------------------------------------------------
 
 class RecommendRequest(BaseModel):
-    tags: List[str] = []              # ["자연", "사진", ...] (프론트 TAGS 기준)
-    region: Optional[str] = None      # "제주시", "서귀포시" 등 (없으면 None)
+    tags: List[str] = []              # ["자연", "사진", ...]
+    region: Optional[str] = None      # "제주시", "서귀포시" 등
     days: int = 1                     # 여행 일수
     max_places_per_day: int = 3       # 하루 관광지 개수
-    daily_hours: float = 10.0         # 하루 최대 여행 시간
-    start_time: str = "09:00"         # "HH:MM"
-    freeText: Optional[str] = ""      # 추가 키워드 (예: "오름, 카페, 드라이브")
+    daily_hours: float = 10.0         # (이제 사용 안 함, 호환용)
+    start_time: str = "09:00"         # (이제 사용 안 함, 호환용)
+    freeText: Optional[str] = ""      # 추가 키워드
 
 
 class ItineraryItem(BaseModel):
@@ -1064,18 +909,10 @@ class ItineraryItem(BaseModel):
     similarity: float
     lat: Optional[float]
     lng: Optional[float]
-    visit_start: str         # "HH:MM"
-    visit_end: str           # "HH:MM"
-    travel_hours: float
-    stay_hours: float
 
 
 class DayPlan(BaseModel):
     day: int
-    total_travel_hours: float
-    total_stay_hours: float
-    start_time: str
-    end_time: str
     items: List[ItineraryItem]
 
 
@@ -1084,7 +921,7 @@ class RecommendResponse(BaseModel):
 
 
 def itinerary_df_to_response(itinerary_df: pd.DataFrame) -> RecommendResponse:
-    """DataFrame -> RecommendResponse 변환 공통 함수"""
+    """DataFrame -> RecommendResponse 변환 (시간 정보 없이)"""
     if itinerary_df.empty:
         return RecommendResponse(days=[])
 
@@ -1093,11 +930,6 @@ def itinerary_df_to_response(itinerary_df: pd.DataFrame) -> RecommendResponse:
     for day in sorted(itinerary_df["day"].unique()):
         day_df = itinerary_df[itinerary_df["day"] == day].copy()
         day_df = day_df.sort_values("order_in_day")
-
-        total_travel = float(day_df["travel_hours"].sum())
-        total_stay = float(day_df["stay_hours"].sum())
-        start_time = str(day_df["visit_start"].iloc[0])
-        end_time = str(day_df["visit_end"].iloc[-1])
 
         items: List[ItineraryItem] = []
         for _, row in day_df.iterrows():
@@ -1114,20 +946,12 @@ def itinerary_df_to_response(itinerary_df: pd.DataFrame) -> RecommendResponse:
                 similarity=float(row["similarity"]),
                 lat=float(row["lat"]) if not pd.isna(row["lat"]) else None,
                 lng=float(row["lng"]) if not pd.isna(row["lng"]) else None,
-                visit_start=str(row["visit_start"]),
-                visit_end=str(row["visit_end"]),
-                travel_hours=float(row["travel_hours"]),
-                stay_hours=float(row["stay_hours"]),
             )
             items.append(item)
 
         days_result.append(
             DayPlan(
                 day=int(day),
-                total_travel_hours=total_travel,
-                total_stay_hours=total_stay,
-                start_time=start_time,
-                end_time=end_time,
                 items=items,
             )
         )
@@ -1146,7 +970,7 @@ def recommend(req: RecommendRequest):
         region_filter=req.region,
         days=req.days,
         max_places_per_day=req.max_places_per_day,
-        start_time_str=req.start_time,
+        start_time_str=req.start_time,   # 내부에서 사용하진 않지만 시그니처 유지
         daily_hours=req.daily_hours,
         free_text=req.freeText or "",
     )
@@ -1202,22 +1026,20 @@ def chat(req: ChatRequest):
     )
 
 
-
 def summarize_itinerary_for_chat(resp: RecommendResponse, ctx: dict, original_message: str) -> str:
     """
     추천 결과 + 파싱된 조건(ctx)을 바탕으로
     사람이 읽기 좋은 한글 설명을 만든다.
+    (⚠ 각 장소의 시간 정보는 표시하지 않고 순서만 보여줌)
     """
     if not resp.days:
         return "조건에 맞는 코스를 찾지 못했어요. 날짜/지역/원하는 분위기를 조금 더 자세히 알려줄래요?"
 
     desc_parts = []
 
-    # 1) 사용자가 보낸 문장
     if original_message:
         desc_parts.append(f"요청하신 \"{original_message}\" 조건을 바탕으로 코스를 만들어 봤어요 😊")
 
-    # 2) 파싱된 조건 간단 요약
     cond_parts = []
     days = ctx.get("days")
     if days:
@@ -1229,7 +1051,6 @@ def summarize_itinerary_for_chat(resp: RecommendResponse, ctx: dict, original_me
 
     tags = ctx.get("tags") or []
     if tags:
-        # 너무 많으면 2~3개만
         show_tags = tags[:3]
         cond_parts.append(" / ".join(show_tags) + " 분위기")
 
@@ -1238,21 +1059,19 @@ def summarize_itinerary_for_chat(resp: RecommendResponse, ctx: dict, original_me
 
     lines: List[str] = []
 
-    # 3) 일자별 코스 요약
     for day_plan in resp.days:
         items_text = " → ".join(
-            f"{item.name}({item.category}, {item.visit_start}~{item.visit_end})"
+            f"{item.name}({item.category})"
             for item in day_plan.items
         )
         lines.append(
-            f"{day_plan.day}일차 ({day_plan.start_time}~{day_plan.end_time}) : {items_text}"
+            f"{day_plan.day}일차 : {items_text}"
         )
 
     desc_parts.extend(lines)
-    desc_parts.append("세부 일정은 화면에서 타임라인으로도 확인할 수 있어요!")
+    desc_parts.append("세부 일정은 순서대로 참고해서 시간은 자유롭게 조정해 주세요!")
 
     return "\n".join(desc_parts)
-
 
 
 # ------------------------------------------------
