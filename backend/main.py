@@ -7,7 +7,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from typing import List, Optional, Tuple
+from typing import List, Optional, Tuple, Dict
 from datetime import datetime, timedelta
 
 import pandas as pd
@@ -496,6 +496,246 @@ def parse_chat_message(message: str):
     }
 
 # ------------------------------------------------
+# 4-2. 코스 전용 룰 기반 응답 (챗봇)
+#      - "제주 서쪽 코스", "제주동쪽코스", "2박3일 제주도 코스" 등
+# ------------------------------------------------
+
+# 프론트에서 만든 코스 일정과 동일한 느낌으로 구성
+CourseDayRB = Dict[str, object]  # {"day": int, "title": str, "items": List[dict]]
+
+COURSE_ITINERARY_RB: Dict[str, List[CourseDayRB]] = {
+    "east": [
+        {
+            "day": 1,
+            "title": "1일차: 제주 동쪽 핵심 코스",
+            "items": [
+                {
+                    "time_label": "오전",
+                    "title": "일출 & 성산 전망 즐기기",
+                    "spot_name": "성산일출봉",
+                    "description": "성산일출봉에 올라 일출 또는 탁 트인 바다 뷰 감상.",
+                },
+                {
+                    "time_label": "점심",
+                    "title": "성산 인근 맛집에서 식사",
+                    "spot_name": None,
+                    "description": "성산항 근처 식당에서 해산물 위주로 여유 있게 점심.",
+                },
+                {
+                    "time_label": "오후",
+                    "title": "바다 산책 & 실내 체험",
+                    "spot_name": "섭지코지",
+                    "description": "섭지코지 산책 후 아쿠아플라넷제주에서 실내 체험.",
+                },
+                {
+                    "time_label": "오후",
+                    "title": "카페 타임",
+                    "spot_name": "드르쿰다in성산",
+                    "description": "드르쿰다in성산에서 디저트와 함께 휴식.",
+                },
+                {
+                    "time_label": "저녁",
+                    "title": "우도 드라이브 또는 해안도로 산책",
+                    "spot_name": "우도",
+                    "description": "배 시간을 맞춰 우도를 다녀오거나 성산 일대 해안 드라이브.",
+                },
+            ],
+        }
+    ],
+    "west": [
+        {
+            "day": 1,
+            "title": "1일차: 감성 가득 서쪽 코스",
+            "items": [
+                {
+                    "time_label": "오전",
+                    "title": "녹차밭과 전시 관람",
+                    "spot_name": "오설록 티 뮤지엄",
+                    "description": "오설록 티 뮤지엄에서 제주 녹차밭과 전시 감상.",
+                },
+                {
+                    "time_label": "점심",
+                    "title": "서쪽 지역 식당에서 점심",
+                    "spot_name": None,
+                    "description": "협재/한림 일대에서 한식 또는 해산물 식사.",
+                },
+                {
+                    "time_label": "오후",
+                    "title": "오름 & 목장 카페",
+                    "spot_name": "새별오름",
+                    "description": "새별오름에서 가벼운 트레킹 후 목장카페 드르쿰다에서 휴식.",
+                },
+                {
+                    "time_label": "오후",
+                    "title": "테마파크 취향 저격",
+                    "spot_name": "스누피가든",
+                    "description": "스누피가든 또는 신화테마파크 중 취향에 맞게 선택 방문.",
+                },
+                {
+                    "time_label": "저녁",
+                    "title": "서쪽 바다 선셋 즐기기",
+                    "spot_name": "곽지해수욕장",
+                    "description": "곽지해수욕장·금능해수욕장에서 노을 감상 후 카페 또는 숙소로 이동.",
+                },
+            ],
+        }
+    ],
+    "south": [
+        {
+            "day": 1,
+            "title": "1일차: 중문·서귀포 남쪽 코스",
+            "items": [
+                {
+                    "time_label": "오전",
+                    "title": "제주 남쪽 바다 풍경",
+                    "spot_name": "산방산",
+                    "description": "산방산과 용머리해안 일대를 함께 둘러보며 해안 절경 감상.",
+                },
+                {
+                    "time_label": "점심",
+                    "title": "중문·서귀포 식당에서 점심",
+                    "spot_name": None,
+                    "description": "해산물 또는 흑돼지 등으로 든든하게 점심.",
+                },
+                {
+                    "time_label": "오후",
+                    "title": "폭포 & 강가 산책",
+                    "spot_name": "천지연폭포",
+                    "description": "천지연폭포와 쇠소깍을 방문해 남쪽의 물가 풍경 즐기기.",
+                },
+                {
+                    "time_label": "저녁",
+                    "title": "마라도 또는 서귀포 시내",
+                    "spot_name": "마라도",
+                    "description": "배 시간을 맞춰 마라도를 다녀오거나 서귀포 시내 산책.",
+                },
+            ],
+        }
+    ],
+    "north": [
+        {
+            "day": 1,
+            "title": "1일차: 제주시·구좌 북쪽 코스",
+            "items": [
+                {
+                    "time_label": "오전",
+                    "title": "공항 근처 해안 드라이브",
+                    "spot_name": "도두동 무지개 해안도로",
+                    "description": "도두동 무지개 해안도로를 따라 가볍게 산책하며 바다 뷰 감상.",
+                },
+                {
+                    "time_label": "점심",
+                    "title": "제주시내 식사",
+                    "spot_name": None,
+                    "description": "제주시 내 식당에서 한식/분식 등 간단히 점심.",
+                },
+                {
+                    "time_label": "오후",
+                    "title": "박물관 & 바다",
+                    "spot_name": "넥슨컴퓨터박물관",
+                    "description": "넥슨컴퓨터박물관 관람 후, 삼양해수욕장·김녕해수욕장 방문.",
+                },
+                {
+                    "time_label": "저녁",
+                    "title": "시내 야경 & 야시장",
+                    "spot_name": "동문재래시장",
+                    "description": "관덕정 근처 산책 후 동문재래시장에서 야시장 먹거리 즐기기.",
+                },
+            ],
+        }
+    ],
+}
+
+COURSE_KO_NAME_RB: Dict[str, str] = {
+    "east": "제주 동쪽 코스",
+    "west": "제주 서쪽 코스",
+    "south": "제주 남쪽 코스",
+    "north": "제주 북쪽 코스",
+}
+
+
+def _format_course_days_rb(days: List[CourseDayRB]) -> str:
+    lines: List[str] = []
+    for day in days:
+        lines.append(f"📅 {day['title']}")
+        for item in day["items"]:
+            spot_part = f" ({item['spot_name']})" if item.get("spot_name") else ""
+            lines.append(f" - {item['time_label']}: {item['title']}{spot_part}")
+            if item.get("description"):
+                lines.append(f"   · {item['description']}")
+        lines.append("")
+    return "\n".join(lines).strip()
+
+
+def _build_single_course_answer(course_key: str) -> Optional[str]:
+    if course_key not in COURSE_ITINERARY_RB:
+        return None
+    title = COURSE_KO_NAME_RB.get(course_key, "")
+    body = _format_course_days_rb(COURSE_ITINERARY_RB[course_key])
+    return f"🗺 {title} 추천 일정이에요.\n\n{body}"
+
+
+def _build_2n3d_answer() -> str:
+    """
+    2박 3일 기본 루트 예시:
+    1일차 서쪽 → 2일차 남쪽 → 3일차 동쪽
+    """
+    order = ["west", "south", "east"]
+    lines: List[str] = []
+    lines.append("⛱ 2박 3일 제주도 추천 코스예요.")
+    lines.append("예시 루트: 1일차 서쪽 → 2일차 남쪽 → 3일차 동쪽\n")
+
+    day_num = 1
+    for key in order:
+        days = COURSE_ITINERARY_RB.get(key)
+        if not days:
+            continue
+        d = days[0]
+        lines.append(f"📅 {day_num}일차: {COURSE_KO_NAME_RB.get(key, d['title'])}")
+        for item in d["items"]:
+            spot_part = f" ({item['spot_name']})" if item.get("spot_name") else ""
+            lines.append(f" - {item['time_label']}: {item['title']}{spot_part}")
+        lines.append("")
+        day_num += 1
+
+    lines.append("원하면 이 코스를 기준으로 숙소·식당까지 같이 추천해 줄게요.")
+    return "\n".join(lines).strip()
+
+
+def rule_based_course_answer(user_message: str) -> Optional[str]:
+    """
+    - '제주 서쪽 코스', '제주서쪽코스', '서쪽 일정 추천' 등
+    - '2박3일 제주도 코스', '제주 2박 3일 코스' 등
+    을 감지해서 코스 텍스트를 바로 반환.
+    """
+    if not user_message:
+        return None
+
+    msg_no_space = user_message.replace(" ", "")
+    # 소문자 변환(영어 대비용)
+    msg_no_space = msg_no_space.lower()
+
+    # 2박 3일 패턴
+    if (
+        ("2박3일" in msg_no_space or ("2박" in msg_no_space and "3일" in msg_no_space))
+        and "코스" in msg_no_space
+    ):
+        return _build_2n3d_answer()
+
+    # 방향별 코스
+    if "서쪽" in msg_no_space and ("코스" in msg_no_space or "일정" in msg_no_space):
+        return _build_single_course_answer("west")
+    if "동쪽" in msg_no_space and ("코스" in msg_no_space or "일정" in msg_no_space):
+        return _build_single_course_answer("east")
+    if "남쪽" in msg_no_space and ("코스" in msg_no_space or "일정" in msg_no_space):
+        return _build_single_course_answer("south")
+    if "북쪽" in msg_no_space and ("코스" in msg_no_space or "일정" in msg_no_space):
+        return _build_single_course_answer("north")
+
+    return None
+
+
+# ------------------------------------------------
 # 5. place / food / stay 카테고리 자동 분류
 # ------------------------------------------------
 
@@ -930,11 +1170,17 @@ class ChatResponse(BaseModel):
 @app.post("/chat", response_model=ChatResponse)
 def chat(req: ChatRequest):
     """
-    1) 사용자가 자유롭게 쓴 문장을 parse_chat_message로 해석해서
-       - tags / region / days / max_places_per_day / start_time_str 추출
-    2) recommend_itinerary_mixed 엔진에 넣어서 코스 생성
-    3) 사람이 읽기 좋은 요약(reply)과 함께 반환
+    1) 먼저 rule_based_course_answer로 동/서/남/북/2박3일 코스인지 확인
+       - 해당되면 그 코스 텍스트를 reply로 반환, itinerary는 빈 값
+    2) 아니면 parse_chat_message로 해석해서 recommend_itinerary_mixed 사용
     """
+    # 1) 동/서/남/북/2박3일 코스 룰 기반 응답
+    rb_answer = rule_based_course_answer(req.message)
+    if rb_answer:
+        empty_resp = RecommendResponse(days=[])
+        return ChatResponse(reply=rb_answer, itinerary=empty_resp)
+
+    # 2) 일반 챗봇 코스 추천 로직
     ctx = parse_chat_message(req.message)
 
     itinerary_df = recommend_itinerary_mixed(
